@@ -5,10 +5,10 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { RodapeComponent } from './rodape/rodape.component';
 
+
 @NgModule({
   declarations: [
-    AppComponent,
-    RodapeComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,
