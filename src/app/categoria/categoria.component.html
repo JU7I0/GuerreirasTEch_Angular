@@ -31,9 +31,10 @@
                 </tr>
             </thead>
             <tbody>
-                <tr *ngFor="let tema of listaCategoria, index as id">
+                <tr *ngFor="let categoria of listaCategoria, index as id">
                 <th scope="row">{{id + 1}}</th>
                 <td>{{categoria.categoria}}</td>
+
                 <td class="d-flex justify-content-around">
                     <button class="btn btn-outline-info w-25" [routerLink]="['/categoriaEdit', categoria.id]">Editar</button>
                     <button class="btn btn-outline-danger w-25" [routerLink]="['/categoriaDelete', categoria.id]">Apagar</button>

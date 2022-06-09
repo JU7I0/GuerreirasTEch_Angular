@@ -23,13 +23,20 @@ export class CategoriaComponent implements OnInit {
     if(environment.token == '') {
       this.router.navigate(['/entrar'])
     }
+this.findAllCategorias()
+  }
 
+  findAllCategorias(){
+    this.categoriaService.getAllCategoria().subscribe((resp: Categoria[])=>{
+      this.listaCategoria=resp
+    } )
   }
 
   cadastrarCategoria() {
     this.categoriaService.postTema(this.categoria).subscribe((resp: Categoria)=>{
     this.categoria = resp
     alert('Tema cadastrado com sucesso!')
+    this.findAllCategorias()
     this.categoria = new Categoria()
     })
   }
