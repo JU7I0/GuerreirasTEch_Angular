@@ -12,18 +12,20 @@ import { Categoria } from 'src/app/model/Categoria';
 export class CategoriaEditComponent implements OnInit {
 
   categoria: Categoria = new Categoria()
+
   constructor ( 
-private categoriaService: CategoriaService,
-private router: Router,
-private route: ActivatedRoute
-  )
-   { }
+    private categoriaService: CategoriaService,
+    private router: Router,
+    private route: ActivatedRoute
+  ) { }
 
   ngOnInit() {
-    if (environment.token ==''){
+    window.scroll(0,0)
+
+    if (environment.token == '') {
       this.router.navigate(['/entrar'])
-      
     }
+    
     let id = this.route.snapshot.params['id']
     this.findByIdCategoria(id)
   }

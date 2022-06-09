@@ -17,7 +17,7 @@ const routes: Routes = [
   {path: 'sobre', component: SobreComponent},
   {path: 'entrar', component: EntrarComponent},
   {path: 'cadastrar', component: CadastrarComponent},
-  {path: 'categoria', component: CategoriaComponent},
+  {path: 'categorias', component: CategoriaComponent},
   {path: 'categoria-edit/:id',component: CategoriaEditComponent},
   {path:'categoria-delete/:id', component: CategoriaDeleteComponent}
 ];
