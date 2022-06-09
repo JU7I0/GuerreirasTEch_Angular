@@ -20,13 +20,15 @@ export class CategoriaComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    window.scroll(0,0)
+
     if(environment.token == '') {
       this.router.navigate(['/entrar'])
     }
-this.findAllCategorias()
+    this.buscarCategorias()
   }
 
-  findAllCategorias(){
+  buscarCategorias(){
     this.categoriaService.getAllCategoria().subscribe((resp: Categoria[])=>{
       this.listaCategoria=resp
     } )
@@ -36,7 +38,7 @@ this.findAllCategorias()
     this.categoriaService.postTema(this.categoria).subscribe((resp: Categoria)=>{
     this.categoria = resp
     alert('Tema cadastrado com sucesso!')
-    this.findAllCategorias()
+    this.buscarCategorias()
     this.categoria = new Categoria()
     })
   }
