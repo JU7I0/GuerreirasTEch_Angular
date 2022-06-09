@@ -25,15 +25,11 @@ usuarioLogin:UsuarioLogin = new UsuarioLogin()
     this.auth.entrar(this.usuarioLogin).subscribe({
         next: (resp: UsuarioLogin)=>{
         this.usuarioLogin = resp
+
         environment.token = this.usuarioLogin.token
         environment.nome = this.usuarioLogin.nome
         environment.foto = this.usuarioLogin.foto
         environment.id = this.usuarioLogin.id
-
-        /*console.log(environment.token)
-        console.log(environment.nome)
-        console.log(environment.foto)
-        console.log(environment.id)*/ //permite visualizar as informações do usuário no console do navegador
 
         this.router.navigate(['/inicio'])
       },

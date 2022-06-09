@@ -12,6 +12,7 @@ import { CadastrarComponent } from './cadastrar/cadastrar.component';
 import { EntrarComponent } from './entrar/entrar.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { TemaComponent } from './tema/tema.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { FormsModule } from '@angular/forms';
     RodapeComponent,
     MenuComponent,
     CadastrarComponent,
-    EntrarComponent
+    EntrarComponent,
+    TemaComponent
   ],
   imports: [
     BrowserModule,
