@@ -1,0 +1,48 @@
+<div class="container-fluid bg-padrao text-light py-3">
+    <a routerLink="/inicio" class="text-light h5"><i class="fa fa-hand-o-left" aria-hidden="true"></i>
+        Voltar ao inicio</a>
+    <div class="container py-3">
+        <div class="row justify-content-center">
+        <div class="col-md-8">
+            <form>
+            <div class="form-group">
+                <label for="">Nome do tema:</label>
+                <input type="text" name="tema" [(ngModel)]="categoria.categoria" id='tema' placeholder="Digite a descrição do tema" class="form-control">
+            </div>
+            <button class="btn btn-outline-light btn-lg w-50 mx-auto d-block" (click)="cadastrarCategoria()">Cadastrar tema</button>
+            </form>
+        </div>
+        </div>
+    </div>
+    </div>
+
+    <div class="container-fluid">
+    <div class="container py-4">
+        <h3 class="text-center txt-padrao">Temas cadastrados</h3>
+
+        <div class="row justify-content-center">
+        <div class="col-md-8">
+            <table class="table table-hover">
+            <thead class="txt-padrao">
+                <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Descrição</th>
+                <th scope="col" class="text-center">Ações</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let categoria of listaCategoria, index as id">
+                <th scope="row">{{id + 1}}</th>
+                <td>{{categoria.categoria}}</td>
+
+                <td class="d-flex justify-content-around">
+                    <button class="btn btn-outline-info w-25" [routerLink]="['/categoriaEdit', categoria.id]">Editar</button>
+                    <button class="btn btn-outline-danger w-25" [routerLink]="['/categoriaDelete', categoria.id]">Apagar</button>
+                </td>
+                </tr>
+            </tbody>
+            </table>
+        </div>
+        </div>
+    </div>
+</div>
