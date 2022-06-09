@@ -28,10 +28,18 @@ private route: ActivatedRoute
     this.findByIdCategoria(id)
   }
 
-  findByIdCategoria(id:number){
+  findByIdCategoria(id: number){
     this.categoriaService.getByIdCategoria(id).subscribe((resp: Categoria)=> {
       this.categoria = resp
     })
 
+  }
+
+  atualizar(){
+    this.categoriaService.putCategoria(this.categoria).subscribe((resp: Categoria)=>{
+      this.categoria = resp
+      alert('Tema atualizado com sucesso!')
+      this.router.navigate(['/categoria'])
+    })
   }
 }
