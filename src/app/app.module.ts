@@ -13,15 +13,9 @@ import { CadastrarComponent } from './cadastrar/cadastrar.component';
 import { EntrarComponent } from './entrar/entrar.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
-<<<<<<< HEAD
-import { TemaComponent } from './tema/tema.component';
-import { TemaEditComponent } from './edit/tema-edit/tema-edit.component';
-import { TemaDeleteComponent } from './delete/tema-delete/tema-delete.component';
-=======
 import { CategoriaComponent } from './categoria/categoria.component';
-import { CategoriaEditComponent } from './edit/categoria-edit/categoria-edit.component';
-import { CategoriaDeleteComponent } from './delete/categoria-delete/categoria-delete.component';
->>>>>>> 643ce2eaf14abd8246a6c58f3b85106c5b2ca9ac
+
+
 
 @NgModule({
   declarations: [
@@ -33,15 +27,7 @@ import { CategoriaDeleteComponent } from './delete/categoria-delete/categoria-de
     MenuComponent,
     CadastrarComponent,
     EntrarComponent,
-<<<<<<< HEAD
-    TemaComponent,
-    TemaEditComponent,
-    TemaDeleteComponent
-=======
-    CategoriaComponent,
-    CategoriaEditComponent,
-    CategoriaDeleteComponent
->>>>>>> 643ce2eaf14abd8246a6c58f3b85106c5b2ca9ac
+    CategoriaComponent
   ],
   imports: [
     BrowserModule,
