@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { UsuarioLogin } from '../model/UsuarioLogin';
 import { Observable } from 'rxjs';
 import { Usuario } from '../model/Usuario';
@@ -9,6 +9,17 @@ import { environment } from 'src/environments/environment.prod';
   providedIn: 'root'
 })
 export class AuthService {
+
+
+  token = {
+    headers: new HttpHeaders().set('Authorization', environment.token),
+  
+  }
+  refreshToken(){
+    this.token = {
+      headers: new HttpHeaders().set('Authorization', environment.token),
+    }
+  }
 
   constructor( 
     private http: HttpClient
