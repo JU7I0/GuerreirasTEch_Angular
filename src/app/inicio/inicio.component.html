@@ -92,13 +92,15 @@ aria-labelledby="staticBackdropLabel" aria-hidden="true">
         <div class="form-group">
             <label for="texto">Escolha um tema ou <a data-dismiss="modal" routerLink="/categorias">cadastre um novo</a>:</label>
             <select name="tema" id="tema" class="form-control">
-                <option value="">Temas</option>
+                <option *ngFor='let item of listaCategorias' value="{{item.id}}">
+              {{item.categoria}}
+            </option>
             </select>
         </div>
         
     
     <div class="modal-footer">
         <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
-        <button type="button" class="btn btn-success">Publicar</button>
+        <button type="button" class="btn btn-success" (click)="this.publicar()">Publicar</button>
     </div>
     

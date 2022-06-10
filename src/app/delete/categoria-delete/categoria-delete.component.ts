@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import {Router,  ActivatedRoute } from '@angular/router';
 import { Categoria } from 'src/app/model/Categoria';
 import { CategoriaService } from 'src/app/service/categoria.service';
 import { environment } from 'src/environments/environment.prod';
@@ -12,7 +12,7 @@ import { environment } from 'src/environments/environment.prod';
 export class CategoriaDeleteComponent implements OnInit {
 
 categoria: Categoria = new Categoria()
-idCategoria: number
+
 
 
   constructor(
@@ -22,13 +22,15 @@ idCategoria: number
   ) { }
 
   ngOnInit(){
-    if(environment.token ==''){
+    window.scroll(0,0)
+
+    if(environment.token == ''){
       this.router.navigate(['/entrar'])
-     
+
     }
 
-    this.idCategoria =  this.route.snapshot.params['id']
-    this.findByIdCategoria(this.idCategoria)
+    let id =  this.route.snapshot.params['id']
+    this.findByIdCategoria(id)
   }
 
   findByIdCategoria(id: number){
@@ -37,12 +39,12 @@ idCategoria: number
     })
   }
 
-apagar(){
-  this.categoriaService.deleteCategoria(this.idCategoria).subscribe(()=>{
-    alert('Tema apagado com sucesso!')
-    this.router.navigate(['/categoria'])
-  })
-}
+  apagar(){
+    this.categoriaService.deleteCategoria(this.categoria.id).subscribe(()=>{
+      alert('Tema apagado com sucesso!')
+      this.router.navigate(['/categorias'])
+    })
+  }
 
 
 }
