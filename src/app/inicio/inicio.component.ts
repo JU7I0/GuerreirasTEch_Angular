@@ -17,11 +17,11 @@ import { CategoriaService } from "../service/categoria.service"
 export class InicioComponent implements OnInit {
 
   postagem: Postagem = new Postagem()
-  listaPostagens: Postagem[]
+  listaPostagens: Postagem[] = []
   tituloPost: string
 
-  Categoria: Categoria = new Categoria()
-  listaCategorias: Categoria[]
+  categoria: Categoria = new Categoria()
+  listaCategorias: Categoria[] = []
   idCategoria: number
   nomeCategoria: string
 
@@ -45,6 +45,7 @@ export class InicioComponent implements OnInit {
       this.router.navigate(['/entrar'])
     }
 
+    this.authService.refreshToken()
     this.getAllCategorias()
     this.getAllPostagens()
 
@@ -59,7 +60,7 @@ export class InicioComponent implements OnInit {
 
   findByIdCategoria(){
     this.CategoriaService.getByIdCategoria(this.idCategoria).subscribe((resp: Categoria) =>{
-      this.Categoria = resp
+      this.categoria = resp
     })
   }
 
@@ -76,11 +77,13 @@ export class InicioComponent implements OnInit {
   }
 
   publicar(){
-    this.Categoria.id = this.idCategoria
-    this.postagem.categoria = this.Categoria
+    this.categoria.id = this.idCategoria
+    this.postagem.categoria = this.categoria
 
     this.Usuario.id = this.idUsuario
     this.postagem.usuario = this.Usuario
+
+    console.log(this.postagem)
 
     this.postagemService.postPostagem(this.postagem).subscribe((resp: Postagem) => {
       this.postagem = resp
