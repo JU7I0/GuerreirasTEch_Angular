@@ -33,6 +33,7 @@ export class CategoriaEditComponent implements OnInit {
   findByIdCategoria(id: number){
     this.categoriaService.getByIdCategoria(id).subscribe((resp: Categoria)=> {
       this.categoria = resp
+      console.log(this.categoria)
     })
 
   }
@@ -41,7 +42,7 @@ export class CategoriaEditComponent implements OnInit {
     this.categoriaService.putCategoria(this.categoria).subscribe((resp: Categoria)=>{
       this.categoria = resp
       alert('Tema atualizado com sucesso!')
-      this.router.navigate(['/categoria'])
+      this.router.navigate(['/categorias'])
     })
   }
 }
