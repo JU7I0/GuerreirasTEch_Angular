@@ -7,6 +7,7 @@ import { Usuario } from "../model/Usuario"
 import { AuthService } from "../service/auth.service"
 import { PostagemService } from "../service/postagem.service"
 import { CategoriaService } from "../service/categoria.service"
+import { HttpHeaders } from "@angular/common/http"
 
 
 @Component({
@@ -25,7 +26,7 @@ export class InicioComponent implements OnInit {
   idCategoria: number
   nomeCategoria: string
 
-  Usuario: Usuario = new Usuario()
+  usuario: Usuario = new Usuario()
   idUsuario = environment.id
 
   key = 'data'
@@ -35,8 +36,9 @@ export class InicioComponent implements OnInit {
     private router: Router,
     private postagemService: PostagemService,
     private CategoriaService: CategoriaService,
-    public authService: AuthService
+    public auth: AuthService
   ) { }
+
 
   ngOnInit() {
     window.scroll(0,0)
@@ -45,7 +47,7 @@ export class InicioComponent implements OnInit {
       this.router.navigate(['/entrar'])
     }
 
-    this.authService.refreshToken()
+    this.auth.refreshToken()
     this.getAllCategorias()
     this.getAllPostagens()
 
@@ -71,8 +73,8 @@ export class InicioComponent implements OnInit {
   }
 
   findByIdUsuario(){
-    this.authService.getByIdUsuario(this.idUsuario).subscribe((resp: Usuario) => {
-      this.Usuario = resp
+    this.auth.getByIdUsuario(this.idUsuario).subscribe((resp: Usuario) => {
+      this.usuario = resp
     })
   }
 
@@ -80,8 +82,8 @@ export class InicioComponent implements OnInit {
     this.categoria.id = this.idCategoria
     this.postagem.categoria = this.categoria
 
-    this.Usuario.id = this.idUsuario
-    this.postagem.usuario = this.Usuario
+    this.usuario.id = this.idUsuario
+    this.postagem.usuario = this.usuario
 
     console.log(this.postagem)
 
@@ -93,15 +95,6 @@ export class InicioComponent implements OnInit {
     })
   }
 
-  findByTituloPostagem(){
-    if(this.tituloPost == ''){
-      this.getAllPostagens()
-    } else {
-      this.postagemService.getByTituloPostagem(this.tituloPost).subscribe((resp: Postagem[]) => {
-        this.listaPostagens = resp
-      })
-    }
-  }
 
   findByNomeCategoria(){
     if(this.nomeCategoria == ''){
