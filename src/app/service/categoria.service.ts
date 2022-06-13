@@ -10,11 +10,11 @@ import { Categoria } from '../model/Categoria';
 
 export class CategoriaService {
 
-  constructor(private http: HttpClient) { }
-
   token = {
     headers: new HttpHeaders().set('Authorization', environment.token)
   }
+
+  constructor(private http: HttpClient) { }
 
 
   getAllCategoria(): Observable<Categoria[]>{
