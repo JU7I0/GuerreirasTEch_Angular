@@ -43,9 +43,9 @@ export class InicioComponent implements OnInit {
   ngOnInit() {
     window.scroll(0,0)
 
-    if(environment.token == ''){
+    /* if(environment.token == ''){
       this.router.navigate(['/entrar'])
-    }
+    } */
 
     this.auth.refreshToken()
     this.getAllCategorias()
