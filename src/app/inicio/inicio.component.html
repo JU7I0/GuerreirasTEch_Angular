@@ -54,7 +54,9 @@
             <h4>{{postagem.titulo}}</h4>
             <span>{{postagem.categoria.categoria}}</span>
             <p>{{postagem.texto}}</p>
-            <small>{{postagem.dataP}}</small>
+            <p class="card-text"><small class="text-muted">
+                {{postagem.dataP | date:'dd/MM/yyyy'}} às {{postagem.dataP | date: 'HH:mm'}}
+            </small></p>
             <p>{{postagem.usuario.nome}}</p>
           </div>
         </div>
@@ -67,8 +69,9 @@
             <h4>{{postagem.titulo}}</h4>
             <span>{{postagem.categoria.categoria}}</span>
             <p>{{postagem.texto}}</p>
-            <small>{{postagem.dataP}}</small>
-            <p>{{usuario.nome}}</p>
+            <p class="card-text"><small class="text-muted">
+                {{postagem.dataP | date:'dd/MM/yyyy'}} às {{postagem.dataP | date: 'HH:mm'}}
+            </small></p>
             <a href="" class="text-info mr-3" [routerLink]="['/postagem-edit', postagem.id]">Editar</a>
             <a href="" class="text-danger" [routerLink]="['/postagem-delete', postagem.id]">Apagar</a>
           </div>
@@ -92,7 +95,7 @@
             <h5 class="card-title m-0">{{item.titulo}}</h5>
             <p class="card-text mt-3">{{item.texto}}</p>
             <p class="card-text"><small class="text-muted">
-                {{item.dataP | date:'DD/MM/YYYY'}} às {{item.dataP | date: 'HH:MM'}}
+                {{item.dataP | date:'dd/MM/yyyy'}} às {{item.dataP | date: 'HH:mm'}}
               </small></p>
 
             <p class="card-text"><small class="text-muted">
