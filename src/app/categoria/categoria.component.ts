@@ -31,7 +31,7 @@ export class CategoriaComponent implements OnInit {
 
   buscarCategorias(){
     this.categoriaService.getAllCategoria().subscribe((resp: Categoria[])=>{
-      this.listaCategoria=resp
+      this.listaCategoria = resp
     } )
   }
 
