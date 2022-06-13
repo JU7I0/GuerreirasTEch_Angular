@@ -14,7 +14,7 @@ import { PostagemEditComponent } from './edit/postagem-edit/postagem-edit.compon
 
 
 const routes: Routes = [
-  {path : '', redirectTo : 'entrar',pathMatch:'full'},
+  {path : '', redirectTo : 'inicio',pathMatch:'full'},
   {path: 'inicio', component: InicioComponent},
   {path: 'contato', component : ContatoComponent},
   {path: 'sobre', component: SobreComponent},
