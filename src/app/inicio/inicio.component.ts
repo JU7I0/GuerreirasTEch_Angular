@@ -35,7 +35,7 @@ export class InicioComponent implements OnInit {
   constructor(
     private router: Router,
     private postagemService: PostagemService,
-    private CategoriaService: CategoriaService,
+    private categoriaService: CategoriaService,
     public auth: AuthService
   ) { }
 
@@ -55,13 +55,13 @@ export class InicioComponent implements OnInit {
   }
 
   getAllCategorias(){
-    this.CategoriaService.getAllCategoria().subscribe((resp: Categoria[]) => {
+    this.categoriaService.getAllCategoria().subscribe((resp: Categoria[]) => {
       this.listaCategorias = resp
     })
   }
 
   findByIdCategoria(){
-    this.CategoriaService.getByIdCategoria(this.idCategoria).subscribe((resp: Categoria) =>{
+    this.categoriaService.getByIdCategoria(this.idCategoria).subscribe((resp: Categoria) =>{
       this.categoria = resp
     })
   }
@@ -100,12 +100,13 @@ export class InicioComponent implements OnInit {
     if(this.nomeCategoria == ''){
       this.getAllCategorias()
     } else {
-      this.CategoriaService.getByNomeCategoria(this.nomeCategoria).subscribe((resp: Categoria[]) => {
+      this.categoriaService.getByNomeCategoria(this.nomeCategoria).subscribe((resp: Categoria[]) => {
         this.listaCategorias = resp
       })
     }
-  }
-
+  }  
 }
+
+
 
 
