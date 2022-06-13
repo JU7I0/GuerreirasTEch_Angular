@@ -8,6 +8,8 @@ import { CategoriaDeleteComponent } from './delete/categoria-delete/categoria-de
 import { EntrarComponent } from './entrar/entrar.component';
 import { InicioComponent } from './inicio/inicio.component';
 import { SobreComponent } from './sobre/sobre.component';
+import { PostagemDeleteComponent } from './delete/postagem-delete/postagem-delete.component';
+import { PostagemEditComponent } from './edit/postagem-edit/postagem-edit.component';
 
 
 
@@ -20,7 +22,9 @@ const routes: Routes = [
   {path: 'cadastrar', component: CadastrarComponent},
   {path: 'categorias', component: CategoriaComponent},
   {path: 'categoria-edit/:id',component: CategoriaEditComponent},
-  {path:'categoria-delete/:id', component: CategoriaDeleteComponent}
+  {path:'categoria-delete/:id', component: CategoriaDeleteComponent},
+  {path: 'postagem-edit/:id', component: PostagemEditComponent},
+  {path: 'postagem-delete/:id', component: PostagemDeleteComponent}
 
 ];
 
