@@ -1,28 +1,29 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-secondary">
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto d-flex align-items-center">
-        <li class="nav-item active">
-        <img src="{{foto}}" alt="" width="50px" height="50px" class="img-fluid rounded-circle">
-        </li>
-        <li class="nav-item pl-3">
-        <p class="m-0 font-weight-bold text-white fs-16">Olá {{nome}}!</p>
-        </li>
-        <li class="nav-item pl-3">
-            <a href="">
-                <p class="fs-16 m-0"><i class="fa fa-female text-white fs-16" aria-hidden="true"></i></p>
-            </a>
-        </li>
-    </ul>
-
-    <ul class="navbar-nav ml-auto d-flex align-items-center">
-        <li class="nav-item pl-3">
-            <a (click)='sair()' class="m-0 font-weight-bold text-white fs-16">Sair <i class="fa fa-sign-out" aria-hidden="true"></i>
-            </a>
-        </li>
-    </ul>
+<nav class="navbar navbar-light bg-transparent">
+  <div class="container-fluid d-flex justify-content-">
+    <div class="row">
+      <button class="navbar-toggler" type="button" data-toggle="collapse"
+        data-target="#navbarToggleExternalContent2" aria-controls="navbarToggleExternalContent2"
+        aria-expanded="false" aria-label="Toggle navigation">
+        <i class="fa fa-bars" aria-hidden="true"></i>
+      </button>
     </div>
+
+    <div>
+      <a href="#">Guerreiras Tech</a>
+    </div>
+
+    <div>
+      <a href="#">Cadastro | Login</a>
+    </div>
+  </div>
 </nav>
+
+  <div class="collapse" id="navbarToggleExternalContent2">
+    <div class="bg-transparentp-4">
+      <button class="btn btn-link">Home</button>
+      <button class="btn btn-link">Sobre nós</button>
+      <button class="btn btn-link">Link 3</button>
+    </div>
+  </div>
+
+  
