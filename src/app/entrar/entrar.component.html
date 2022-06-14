@@ -1,49 +1,43 @@
-<body>
-    <div class="container-fluid">
-        <div class="row justify-content-center ">
-            <section class="col-12 col-sm-6 col-md-4 pt-5">
-                <div class="d-flex justify-content-center mb-3">
-                    <img src="" alt="logo" class="bg">
-                </div>
-                <div id="borda">
-                <form>
-                    <h4 class="text-center mt-4">Login</h4>
-                    
-                    <div class="form-group">
-                        <label for="usuario">Usuário:</label>
-                        <input
-                        type="text"
-                        class="form-control"
-                        name="usuario"
-                        placeholder="Digite seu usuário"
-                        [(ngModel)]="usuarioLogin.usuario"
-                        />
-                    </div>
-                    <div class="form-group">
-                        <label for="senha">Senha:</label>
-                        <input
-                        type="password"
-                        class="form-control"
-                        name="senha"
-                        placeholder="Digite sua senha"
-                        [(ngModel)]="usuarioLogin.senha"
-                        />
-                    </div>
+<div class="">
+  <div class="row">
+    <div class="col-md-6">
+      <div class="text">
+        <form class="col-md-8 my-5">
+          <div class="col-md-12">
+            <h1 class="text-center mt-3">Login</h1>
+            <div class="form-group">
+              <label for="usuario">Usuário:</label>
+              <input
+                type="text"
+                class="form-control"
+                name="usuario"
+                placeholder="Digite seu usuário"
+                [(ngModel)]="usuarioLogin.usuario"
+              />
+            </div>
+            <div class="form-group">
+              <label for="senha">Senha:</label>
+              <input
+                type="password"
+                class="form-control"
+                name="senha"
+                placeholder="Digite sua senha"
+                [(ngModel)]="usuarioLogin.senha"
+              />
+            </div>
+            <div class="form-group form-check">
+              <input type="checkbox" class="form-check-input" name="" />
+              <label class="formchecklabel">Lembre-me</label>
+            </div>
 
-                    <div class="form-group form-check">
-                        <input type="checkbox" class="form-check-input" name="">
-                        <label class="formchecklabel">Lembre-me</label>
-                    </div>
-
-                    <button class="btn btn-dark btn-block" (click)="entrar()">Entrar</button>
-                </form> 
-                <hr class="mt-5 mb-5" />
-                <p class="text-center">
-                    Não tem uma conta? <a routerLink="/cadastrar">Cadastre-se</a>
-                </p>
-                </div>
-            </section>
-        </div>
+            <button class="btn btn-dark btn-block" (click)="entrar()">
+              Entrar
+            </button>
+          </div>
+        </form>
+      </div>
     </div>
-</body>
 
+    <div class="col-md-6 vh-100 bg-img"></div>
+  </div>
+</div>
