@@ -1,23 +1,41 @@
-header {
-    height: 90vh;
-    background-image: url(../../assets/img/women-in-tech.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
+@import url('https://fonts.googleapis.com/css2?family=Ruda:wght@700&display=swap');
 
 
-    box-shadow: 8px 0 22px 0 rgba( 31, 38, 135, 0.37 );
-    backdrop-filter: blur( 13.5px );
-    -webkit-backdrop-filter: blur( 13.5px );
+.parallax {
+  /* The image used */
+  background-image: url(../../assets/img/fundo-menu.png);
+
+  /* Full height */
+  height: 100vh;
+
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.estilo-nav {
+    background: rgba(255, 254, 254, 0.26);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(4.1px);
+    -webkit-backdrop-filter: blur(4.1px);
+}
+
+.estilo-fonte {
+    font-family: 'Ruda', sans-serif;
+    font-weight: bolder;
+    font-size: 22pt;
     border-radius: 5px;
-    border: 1px solid rgba( 255, 255, 255, 0.18 ); 
+    padding: 8px;
+    color: rgb(85, 66, 66);
+    text-shadow: 2px 2px 2px #B8B8B8;
 }
 
-a, button {
-    text-decoration: none;
-    color: black;
-}
-
-.estiloBox {
-    margin-top: 2%;
+.estilo-marca {
+    font-family: 'Ruda', sans-serif;
+    font-size: 28pt;
+    color: rgb(85, 66, 66);
+    text-shadow: 2px 2px 2px #B8B8B8;
 }
 
