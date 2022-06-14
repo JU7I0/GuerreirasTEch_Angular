@@ -1,7 +1,12 @@
+.bg-color{
+    background-color: #FFF8E9;
+}
+
 .bg-img{
-    background-image: url(../../assets/img/mulheres.png);
+    background-image: url(../../assets/img/mulheres2.png);
     background-repeat: no-repeat;
     background-position: bottom right;
+    background-color: #FFF8E9;
 }
 
 .text{
@@ -16,10 +21,11 @@ backdrop-filter: blur(5px);
 -webkit-backdrop-filter: blur(5px);
 border: 1px solid rgba(255, 255, 255, 0.3);
 
--webkit-box-shadow: 5px 5px 16px 6px black; 
-box-shadow: 5px 5px 16px 6px black;
+-webkit-box-shadow: 5px 5px 16px 6px rgb(0, 0, 0); 
+box-shadow: 5px 5px 16px 6px rgb(0, 0, 0);
 }
 
 button:hover{
     font-weight: bolder;
 }
+

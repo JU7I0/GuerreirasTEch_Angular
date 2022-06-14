@@ -1,12 +1,10 @@
 <div class="bg-img ">
     
     <div class="row">
-
-    <div class="col-md-6"></div>
     
-        <div class="col-md-6">
+        <div class="col-md-12 d-flex justify-content-center ">
         <div class="text">
-            <form class="col-md-8 my-5">
+            <form class="my-5 d-block mx-auto p-4">
                 <div class="col-md-12">
                     <h1 class="text-center mt-3">Cadastro</h1>
                 <div class="form-group">
@@ -25,7 +23,7 @@
                     type="text"
                     class="form-control"
                     name="usuario"
-                    placeholder="Digite seu usuário"
+                    placeholder="Digite seu email"
                     [(ngModel)]="usuario.usuario"
                 />
                 </div>
@@ -55,7 +53,7 @@
                     type="password"
                     class="form-control"
                     name="confirmSenha"
-                    placeholder="Digite sua senha"
+                    placeholder="Digite novamente sua senha"
                     [(ngModel)]="usuario.senha"
                 />
                 </div>
@@ -68,15 +66,12 @@
                 </select>
                 </div >
                 <div class="d-flex justify-content-center mb-3">
-                <button type="submit" class="btn btn-dark mr-4" routerLink="/entrar">Cancelar</button>
-                <button type="submit" class="btn btn-dark" (click)="cadastrar()">Cadastrar</button>
+                <button type="submit" class="btn btn-light mr-3" routerLink="/entrar">Cancelar</button>
+                <button type="submit" class="btn btn-light" (click)="cadastrar()">Cadastrar</button>
                 </div>
             </div>
             </form>
         </div>
-        </div>
-        <div class="col-md-6 img">
-        
         </div>
     </div>
 </div>

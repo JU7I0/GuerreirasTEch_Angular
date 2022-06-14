@@ -1,5 +1,5 @@
 .bg-img{
-    background-image: url(../../assets/img/mulher.png);
+    background-image: url(../../assets/img/logo5.png);
     width: 100%;
     height: 100%;
     background-repeat: no-repeat;
@@ -7,7 +7,7 @@
 }
 
 .text{
-    color:white;
+    color:rgb(0, 0, 0);
 }
 
 form{
@@ -18,12 +18,12 @@ backdrop-filter: blur(5px);
 -webkit-backdrop-filter: blur(5px);
 border: 1px solid rgba(255, 255, 255, 0.3);
 
--webkit-box-shadow: 5px 5px 16px 6px #C4219C; 
-box-shadow: 5px 5px 16px 6px #C4219C;
+-webkit-box-shadow: 5px 5px 16px 6px #000000; 
+box-shadow: 5px 5px 16px 6px #000000;
 }
 
 button:hover{
-    background-color: #C4219C;
     border: none;
     font-weight: bolder;
 }
+
