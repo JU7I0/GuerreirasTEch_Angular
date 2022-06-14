@@ -1,12 +1,13 @@
-<div class="container-fluid vh-100 bg-dark">
+<div class="bg-img ">
     <div class="row">
-        
 
-    <div class="col-md-6">
-        <div class="bg-dark text-light">
-            <form class="d-flex justify-content-center">
-                <div class="col-md-10">
-                    <h1 class="text-center">Cadastro</h1>
+    <div class="col-md-6"></div>
+    
+        <div class="col-md-6">
+        <div class="text">
+            <form class="col-md-8 my-5">
+                <div class="col-md-12">
+                    <h1 class="text-center mt-3">Cadastro</h1>
                 <div class="form-group">
                 <label for="nome">Nome:</label>
                 <input
@@ -61,13 +62,13 @@
                 <label for="tipo">Tipo de usuário:</label>
                 <select name="tipo" id="tipo" class="form-control" (change)="tipoUser($event)">
                     <option value="">Selecione um tipo de usuário</option>
-                    <option value="normal">Normal</option>
+                    <option value="normal">Padrão</option>
                     <option value="adm">Administrador</option>
                 </select>
-                </div>
-                <div class="d-flex justify-content-center">
-                <button type="submit" class="btn btn-danger mr-4" routerLink="/entrar">Cancelar</button>
-                <button type="submit" class="btn btn-success" (click)="cadastrar()">Cadastrar</button>
+                </div >
+                <div class="d-flex justify-content-center mb-3">
+                <button type="submit" class="btn btn-dark mr-4" routerLink="/entrar">Cancelar</button>
+                <button type="submit" class="btn btn-dark" (click)="cadastrar()">Cadastrar</button>
                 </div>
             </div>
             </form>

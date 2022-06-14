@@ -1,0 +1,29 @@
+.bg-img{
+    background-image: url(../../assets/img/mulher.png);
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.text{
+    color:white;
+}
+
+form{
+    background: rgba(255, 255, 255, 0.2);
+border-radius: 16px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(5px);
+-webkit-backdrop-filter: blur(5px);
+border: 1px solid rgba(255, 255, 255, 0.3);
+
+-webkit-box-shadow: 5px 5px 16px 6px #C4219C; 
+box-shadow: 5px 5px 16px 6px #C4219C;
+}
+
+button:hover{
+    background-color: #C4219C;
+    border: none;
+    font-weight: bolder;
+}
