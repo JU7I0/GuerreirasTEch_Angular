@@ -1,9 +1,23 @@
-.menu{
-  width: 20px;
+header {
+    height: 90vh;
+    background-image: url(../../assets/img/women-in-tech.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+
+
+    box-shadow: 8px 0 22px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 13.5px );
+    -webkit-backdrop-filter: blur( 13.5px );
+    border-radius: 5px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 ); 
 }
 
-a{
-  text-decoration: none;
-  color: black;
+a, button {
+    text-decoration: none;
+    color: black;
+}
+
+.estiloBox {
+    margin-top: 2%;
 }
 
