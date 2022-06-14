@@ -1,200 +1,52 @@
-<div class="container-fluid">
-  <div class="row bg-secondary align-items-center">
-    <div class="col-md-6 text-white">
-      <div class="row d-flex justify-content-center">
-        <div class="col-md-6">
-          <h1 class="fs-54">Seja bem vindes ao Guerreiras Tech</h1>
-          <h5 class="fs-18">Mulheres que ajudam mulheres</h5>
+<div div class="container bg-light pt-5 ">
+    <div class="row justify-content-around">
+      <div class="col-md-3  padrao">
+        <div class="row d-flex justify-content-around">
+          <img src="IMG-20210101-WA0028__1_-removebg-preview.png" width="70" height="70" class="mr-auto ml-3 mt-2 rounded rounded-circle" alt="foto">
+          <div>
+            <h5 class="text-center mr-2 mt-2">Nome Usuário</h5>
+            <a href="#">lkdn | github</a>
+          </div>
         </div>
+        <hr>
+        <h6 class="text-center">TITULO</h6>
+        <p class="text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+        <p class="text-center">13/06/2022 ás 21:01</p>
       </div>
-
-      <div class="row d-flex justify-content-center mt-3 mb-5">
-        <div class="col-md-6">
-          <button
-            class="btn btn-light mr-2"
-            data-toggle="modal"
-            data-target="#novaPostagem"
-          >
-            Nova Postagem
-          </button>
-          <a class="btn btn-outline-light" href="#postagens">Ver Postagens</a>
+      <div class="col-md-5">
+        <img class="img-fluid padrao-img" src="women-in-tech.jpg" alt="">
+      </div>
+      <div class="col-md-3  padrao">
+        <div class="row d-flex justify-content-around">
+          <img src="IMG-20210101-WA0028__1_-removebg-preview.png" width="70" height="70" class="mr-auto ml-3 mt-2 rounded rounded-circle" alt="foto">
+          <div>
+            <h5 class="text-center mr-2 mt-2">Nome Usuário</h5>
+            <a href="#">lkdn | github</a>
+          </div>
         </div>
-      </div>
-    </div>
-
-    <div class="com-md-6 d-flex justify-content-center mt-3 mb-5">
-      <img
-        src="https://i.imgur.com/23iZstM.png"
-        alt=""
-        width="500px"
-        height="500px"
-      />
+        <hr>
+        <h6 class="text-center">TITULO</h6>
+        <p class="text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+        <p class="text-center">13/06/2022 ás 21:01</p>
+      </div> 
     </div>
   </div>
-</div>
-
-
-    <ul class="nav nav-tabs" id="myTab" role="tablist">
-      <li class="nav-item" role="presentation">
-        <a class="nav-link active" id="todasPostagens-tab" data-toggle="tab" href="#todasPostagens" role="tab" aria-controls="todasPostagens" aria-selected="true">Todas Postagens</a>
-      </li>
-      <li class="nav-item" role="presentation">
-        <a (click)="findByIdUsuario()" class="nav-link" id="minhasPostagens-tab" data-toggle="tab" href="#minhasPostagens" role="tab" aria-controls="minhasPostagens" aria-selected="false">Minhas Postagens</a>
-      </li>
-      <li class="nav-item" role="presentation">
-        <a class="nav-link" id="postagensTema-tab" data-toggle="tab" href="#postagensTema" role="tab" aria-controls="postagensTema" aria-selected="false">Postagens por tema</a>
-      </li>
-    </ul>
-    <div class="tab-content" id="myTabContent">
-
-
-      <div class="tab-pane fade show active" id="todasPostagens" role="tabpanel" aria-labelledby="todasPostagens-tab">
-        <div class="row justify-content-center " *ngFor="let postagem of listaPostagens">
-          <div class="col-md-2 border border-dark rounded my-2">
-            <h4>{{postagem.titulo}}</h4>
-            <span>{{postagem.categoria.categoria}}</span>
-            <p>{{postagem.texto}}</p>
-            <p class="card-text"><small class="text-muted">
-                {{postagem.dataP | date:'dd/MM/yyyy'}} às {{postagem.dataP | date: 'HH:mm'}}
-            </small></p>
-            <p>{{postagem.usuario.nome}}</p>
-          </div>
-        </div>
+  <div div class="container bg-light py-3 xy">
+    <div class="row justify-content-around">
+      <div class="col-md-3 padrao">hello</div>
+      <div class="col-md-3  padrao">hello</div>
+      <div class="col-md-5">
+        <img class="img-fluid padrao-img" src="women-in-tech.jpg" alt="">
       </div>
-
-
-      <div class="tab-pane fade" id="minhasPostagens" role="tabpanel" aria-labelledby="minhasPostagens-tab">
-        <div class="row justify-content-center" *ngFor="let postagem of usuario.postagem">
-          <div class="col-md-8 border border-dark rounded my-2">
-            <h4>{{postagem.titulo}}</h4>
-            <span>{{postagem.categoria.categoria}}</span>
-            <p>{{postagem.texto}}</p>
-            <p class="card-text"><small class="text-muted">
-                {{postagem.dataP | date:'dd/MM/yyyy'}} às {{postagem.dataP | date: 'HH:mm'}}
-            </small></p>
-            <a href="" class="text-info mr-3" [routerLink]="['/postagem-edit', postagem.id]">Editar</a>
-            <a href="" class="text-danger" [routerLink]="['/postagem-delete', postagem.id]">Apagar</a>
-          </div>
-        </div>
-      </div>
-
-
-      <div class="tab-pane fade" id="postagensTema" role="tabpanel" aria-labelledby="postagensTema-tab">
-        <div class="row d-flex justify-content-center">
-        <div class="col-md-4">
-
-          <div class="form-group mb-5">
-            <input type="text" class="form-control" id="tituloPesquisa" placeholder="Digite um tema para pesquisar" [(ngModel)]='nomeCategoria' (keyup)='findByNomeCategoria()'>
-          </div>
-        </div>
-      </div>
-
-      <div class="card-columns" *ngFor='let categoria of listaCategorias'>
-        <div class="card text-center" *ngFor='let item of categoria.postagem'>
-          <div class="card-body">
-            <h5 class="card-title m-0">{{item.titulo}}</h5>
-            <p class="card-text mt-3">{{item.texto}}</p>
-            <p class="card-text"><small class="text-muted">
-                {{item.dataP | date:'dd/MM/yyyy'}} às {{item.dataP | date: 'HH:mm'}}
-              </small></p>
-
-            <p class="card-text"><small class="text-muted">
-                by: {{item.usuario.nome}}
-              </small></p>
-
-          </div>
-        </div>
-      </div>
-      </div>
-
     </div>
-
-
-
-
-
-
-
-<div
-    class="modal fade"
-    id="novaPostagem"
-    tabindex="-1"
-    data-backdrop="static"
-    data-keyboard="false"
-    tabindex="-1"
-    aria-labelledby="staticBackdropLabel"
-    aria-hidden="true"
-    >
-    <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-        <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Nova Postagem</h5>
-            <button
-            type="button"
-            class="close"
-            data-dismiss="modal"
-            aria-label="Close"
-            >
-            <span aria-hidden="true">&times;</span>
-            </button>
-
-            <div class="modal-body">
-              <form>
-                <div class="form-group">
-                    <label for="titulo">Título</label>
-                    <input type="text" class="form-control" id="titulo"
-                    placeholder="Digite o título" name="titulo" [(ngModel)]="postagem.titulo"/>
-                </div>
-
-                <div class="form-group">
-                    <label for="texto">Texto</label>
-                    <textarea
-                    class="form-control"
-                    name="texto"
-                    id="texto"
-                    rows="3"
-                    [(ngModel)]="postagem.texto"
-                    ></textarea>
-                </div>
-
-                <div class="form-group">
-                    <label for="texto"
-                    >Escolha um tema ou
-                    <a data-dismiss="modal" routerLink="/categorias"
-                        >cadastre um novo</a
-                    >:</label
-                    >
-                    <select
-                    name="tema"
-                    id="tema"
-                    class="form-control"
-                    [(ngModel)]="idCategoria"
-                    (change)="findByIdCategoria()"
-                    >
-                    <option
-                        *ngFor="let postagem of listaCategorias"
-                        value="{{ postagem.id }}"
-                    >
-                        {{ postagem.categoria }}
-                    </option>
-                    </select>
-                </div>
-              </form>
-            </div>
-
-            <div class="modal-footer">
-                <button type="button" class="btn btn-danger" data-dismiss="modal">
-                Cancelar
-                </button>
-                <button
-                type="button"
-                class="btn btn-success"
-                (click)="this.publicar()"
-                >
-                Publicar
-                </button>
-            </div>
-            </div>
-        </div>
-        </div>
+  </div>
+  <div div class="container bg-light pb-5">
+    <div class="row justify-content-around">
+      <div class="col-md-5 p-0 m-0">
+        <img class="img-fluid padrao-img" src="women-in-tech.jpg" alt="">
+      </div>
+      <div class="col-md-3 padrao">hello</div>
+      <div class="col-md-3  padrao">hello</div>
+      
     </div>
+  </div>

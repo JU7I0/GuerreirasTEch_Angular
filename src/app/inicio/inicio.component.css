@@ -1,8 +1,18 @@
-#img-bg{
-    background-image: url();
-    min-height: 500px;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+.ts {
+    text-decoration: none;
+    color: black;
 }
 
+
+.xy {
+    padding-right: 0;
+}
+
+.padrao {
+    border-radius: 8px;
+    border: 1px solid black;
+}
+
+.padrao-img {
+    border-radius: 8px;
+}
