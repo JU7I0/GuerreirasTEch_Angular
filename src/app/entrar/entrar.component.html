@@ -1,41 +1,43 @@
 <div class="">
-  <div class="row">
-    <div class="col-md-6">
-      <div class="text">
-        <form class="col-md-8 my-5">
-          <div class="col-md-12">
-            <h1 class="text-center mt-3">Login</h1>
-            <div class="form-group">
-              <label for="usuario">Usuário:</label>
-              <input
-                type="text"
-                class="form-control"
-                name="usuario"
-                placeholder="Digite seu usuário"
-                [(ngModel)]="usuarioLogin.usuario"
-              />
-            </div>
-            <div class="form-group">
-              <label for="senha">Senha:</label>
-              <input
-                type="password"
-                class="form-control"
-                name="senha"
-                placeholder="Digite sua senha"
-                [(ngModel)]="usuarioLogin.senha"
-              />
-            </div>
-            <div class="form-group form-check">
-              <input type="checkbox" class="form-check-input" name="" />
-              <label class="formchecklabel">Lembre-me</label>
-            </div>
-
-            <button class="btn btn-dark btn-block" (click)="entrar()">
-              Entrar
-            </button>
-          </div>
-        </form>
-      </div>
+  <div class="row align-items-center">
+    <div class="col-md-6 ">
+      
+        <div class="row text ">
+            <form class="my-5 w-75 d-block mx-auto p-4">
+                <div class="col-md-12">
+                  <h1 class="text-center mt-3">Login</h1>
+                  <div class="form-group">
+                    <label for="usuario">Usuário:</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      name="usuario"
+                      placeholder="Digite seu usuário"
+                      [(ngModel)]="usuarioLogin.usuario"
+                    />
+                  </div>
+                  <div class="form-group">
+                    <label for="senha">Senha:</label>
+                    <input
+                      type="password"
+                      class="form-control"
+                      name="senha"
+                      placeholder="Digite sua senha"
+                      [(ngModel)]="usuarioLogin.senha"
+                    />
+                  </div>
+                  <div class="form-group form-check">
+                    <input type="checkbox" class="form-check-input" name="" />
+                    <label class="formchecklabel">Lembre-me</label>
+                  </div>
+      
+                  <button class="btn btn-dark btn-block" (click)="entrar()">
+                    Entrar
+                  </button>
+                </div>
+              </form>
+        </div>
+      
     </div>
 
     <div class="col-md-6 vh-100 bg-img"></div>
