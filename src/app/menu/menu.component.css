@@ -1,31 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Ruda:wght@700&display=swap');
 
-
-.parallax {
-  /* The image used */
-  background-image: url(../../assets/img/fundo-menu.png);
-
-  /* Full height */
-  height: 100vh;
-
-  /* Create the parallax scrolling effect */
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-
 .estilo-nav {
-    background: rgba(255, 254, 254, 0.26);
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(4.1px);
-    -webkit-backdrop-filter: blur(4.1px);
+    background: rgb(255, 254, 254);
+    box-shadow: 0 4px 30px rgb(0, 0, 0);
+    width: 100%;
 }
 
 .estilo-fonte {
     font-family: 'Ruda', sans-serif;
     font-weight: bolder;
-    font-size: 22pt;
+    font-size: 16pt;
     border-radius: 5px;
     padding: 8px;
     color: rgb(85, 66, 66);
@@ -34,8 +18,7 @@
 
 .estilo-marca {
     font-family: 'Ruda', sans-serif;
-    font-size: 28pt;
+    font-size: 20pt;
     color: rgb(85, 66, 66);
     text-shadow: 2px 2px 2px #B8B8B8;
 }
-
