@@ -4,10 +4,8 @@ html{
     scroll-behavior: smooth;
 }
 
-.fs-54{
-    font-size: 50pt;
-}
-
-.fs-18{
-    font-size: 20pt;
+body {
+    background-image: url(assets/img/women-in-tech.jpg);
+    background-repeat: repeat-y;
+    background-size: cover;
 }
