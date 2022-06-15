@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css2?family=Ruda:wght@700&display=swap');
+
+ul.social-network{
+    list-style: none;
+    padding: 0;
+    
+  }
+
+  .bg-rodape{
+    width: 100%;
+    background: #ce8f7d34;
+    box-shadow: 0 4px 25px rgba(0, 0, 0, 0.208);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.294);
+  }
+
+  .estilo-fonte {
+    font-family: 'Ruda', sans-serif;
+    font-weight: bolder;
+    font-size: 10pt;
+    border-radius: 5px;
+    padding: 8px;
+    color: rgb(76, 49, 49);
+    text-shadow: 2px 2px 2px #2f28283c;
+}
+
+
+  .bg-line{
+    background-color: #ce8f7d2c;
+  }
+
+  ul.social-network li{
+    display: inline;
+    margin: 0;
+    padding: 5px;
+
+  }
+  
+
+
+
+  .fa{
+    font-size: 35pt;
+    color: #312d2d;
+    padding: 5px;
+    
+  }
+  .fa-envelope-square:hover{
+    color: #D07170;
+  }
+  
+  .fa-github-square:hover{
+    color: #D07170;
+  }
+
