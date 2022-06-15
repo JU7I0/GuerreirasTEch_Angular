@@ -1,15 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Ruda:wght@700&display=swap');
 
 .estilo-nav {
-    background: rgb(255, 254, 254);
-    box-shadow: 0 4px 30px rgb(0, 0, 0);
     width: 100%;
+
+    background: #fff8e957;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
 .estilo-fonte {
     font-family: 'Ruda', sans-serif;
     font-weight: bolder;
-    font-size: 16pt;
+    font-size: 14pt;
     border-radius: 5px;
     padding: 8px;
     color: rgb(85, 66, 66);
