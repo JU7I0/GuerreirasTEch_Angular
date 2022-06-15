@@ -27,3 +27,7 @@ button:hover{
     font-weight: bolder;
 }
 
+.margem{
+    margin-top: 100px;
+    margin-bottom: 50px;
+}
