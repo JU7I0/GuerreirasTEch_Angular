@@ -10,8 +10,8 @@
         <div class="borda-link">
           <a class="link" routerLink="/sobre">SOBRE NÓS | </a>
           <a class="link" routerLink="/inicio">MULHERES INSPIRADORAS | </a>
-          <a class="link" routerLink="/categorias">TODAS AS PUBLICAÇÕES | </a>
-          <a class="link" routerLink="/categorias">NOVA POSTAGEM </a>
+          <a class="link" routerLink="#">TODAS AS PUBLICAÇÕES | </a>
+          <a class="link" data-toggle="modal" data-target="#novaPostagem" (click)="publicar()">NOVA POSTAGEM </a>
         </div>
       </div>
   </div>
@@ -204,3 +204,38 @@
 
 
 </body>
+
+
+<div class="modal fade" id="novaPostagem" tabindex="-1" role="dialog" 
+aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+        <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLabel">Nova Postagem</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+        </div>
+        <div class="modal-body">
+
+            <div class="form-group">
+                <label for="titulo">Título</label>
+                <input [(ngModel)]="postagem.titulo" type="text" class="form-control" id="texto" placeholder="Insira um título">
+            </div>
+
+        <div class="form-group">
+            <label for="texto">Texto</label>
+            <textarea [(ngModel)]="postagem.texto" class="form-control" name="texto" id="texto" rows="3"></textarea>
+        </div>
+
+        <div class="form-group">
+            <label for="texto">Escolha um tema ou <a data-dismiss="modal" routerLink="/tema">cadastre um novo</a>: </label>
+            <select name="tema" id="tema" class="form-control" [(ngModel)]="idCategoria" (change)="findByIdCategoria()">
+                <option *ngFor="let item of listaCategorias" value="{{item.id}}">{{item.categoria}}</option>
+            </select>
+        </div>
+
+        <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
+        <button type="button" class="btn btn-success" (click)="publicar()" data-dismiss="modal">Publicar</button>
+        </div>
