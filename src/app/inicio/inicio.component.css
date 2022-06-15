@@ -45,4 +45,16 @@
 .img-post{
  width: 400px;
  height: auto;
+ border-radius: 10px;
+}
+
+alinhar{
+  vertical-align: middle;
+}
+
+.img-insp{
+  width: 150px;
+  height: auto;
+  border-radius: 100px;
+  
 }

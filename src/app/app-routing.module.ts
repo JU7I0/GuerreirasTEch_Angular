@@ -22,7 +22,7 @@ const routes: Routes = [
   {path: 'cadastrar', component: CadastrarComponent},
   {path: 'categorias', component: CategoriaComponent},
   {path: 'categoria-edit/:id',component: CategoriaEditComponent},
-  {path:'categoria-delete/:id', component: CategoriaDeleteComponent},
+  {path: 'categoria-delete/:id', component: CategoriaDeleteComponent},
   {path: 'postagem-edit/:id', component: PostagemEditComponent},
   {path: 'postagem-delete/:id', component: PostagemDeleteComponent}
 
