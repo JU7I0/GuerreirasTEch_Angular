@@ -12,20 +12,18 @@ import { AuthService } from '../service/auth.service';
 export class MenuComponent implements OnInit {
 
   id = environment.id
-  nome: string = environment.nome
-  foto: string = environment.foto
   token: string = environment.token
 
   constructor(
     private router: Router,
-    private auth: AuthService
+    public auth: AuthService
   ) { }
 
   ngOnInit() {
   }
 
     sair(){
-      this.router.navigate(['/entrar'])
+      this.router.navigate(['/inicio'])
       environment.token = ''
       environment.nome = ''
       environment.foto = ''
