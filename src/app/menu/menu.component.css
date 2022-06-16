@@ -1,9 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Ruda:wght@700&display=swap');
 
-<<<<<<< HEAD
+
 .bg-color{
-    background-color: #FFF8E9;
-=======
+    background-color: #FFF8E9; 
+    }
 .fsize{
     font-size: 17pt;
 }
@@ -16,7 +16,6 @@
     backdrop-filter: blur(5px);
     -webkit-backdrop-filter: blur(5px);
     border: 1px solid rgba(255, 255, 255, 0.3);
->>>>>>> 0d8abbd4162c3de0523850a3031c1b0257fc84b0
 }
 
 .estilo-fonte {
