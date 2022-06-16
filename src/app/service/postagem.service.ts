@@ -9,11 +9,11 @@ import { Postagem } from '../model/Postagem';
 })
 export class PostagemService {
   
+  constructor(private http: HttpClient) { }
+
   token = {
     headers: new HttpHeaders().set('Authorization', environment.token)
   }
-
-  constructor(private http: HttpClient) { }
 
   getAllPostagens(): Observable<Postagem[]>{
     return this.http.get<Postagem[]>('https://guerreirastech.herokuapp.com/postagem', this.token)
