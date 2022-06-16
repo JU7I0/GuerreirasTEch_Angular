@@ -1,9 +1,52 @@
 <header class="container-fluid p-0 fixed-top">
-        <nav class="navbar estilo-nav">
-            <div class="container">
-                <a class="estilo-fonte" routerLink="/inicio">INÍCIO</a>
-                <a class="estilo-marca" href="/inicio">GUERREIRAS TECH</a>
-                <a class="estilo-fonte" routerLink="/entrar">LOGIN</a>
+    <nav class="navbar estilo-nav">
+        <div class="container-fluid m-0">
+
+            <div>
+                <a class="estilo-fonte fsize" routerLink="/inicio">INÍCIO</a>
             </div>
-        </nav>
+
+            <div>
+                <p class="estilo-marca">GUERREIRAS TECH</p>
+            </div>
+
+
+            <div *ngIf="!auth.logado()">
+                <a class="estilo-fonte fsize" routerLink="/entrar">LOGIN</a>
+            </div>
+
+            <div *ngIf="auth.logado()" class="d-flex justify-content-between align-self-center align-content-center align-items-center">
+                <div class="mr-3">
+                    <p class="estilo-fonte" style="font-size: 14pt;">{{auth.nome}}</p>
+                </div>
+                <div class="mr-3">
+                    <img src="{{auth.foto}}" width="65px" height="65px" class=" border border-danger rounded rounded-circle" alt="foto_de_perfil">
+                </div>
+                <div *ngIf="auth.logado()">
+                    <a  (click)="sair()" class="estilo-fonte fsize">SAIR <i class="fa fa-sign-out" aria-hidden="true"></i></a>
+                </div>
+            </div>
+
+                <!-- <ul class="navbar-nav d-flex align-items-center mr-4" >
+                    <li class="nav-item pr-3">
+                    <p class="m-0 font-weight-bolder text-white" >{{nome}}</p>
+                    </li>
+
+                    <li class="nav-item active mr-4" >
+                        <img
+                            src={{foto}}
+                            alt="foto de perfil"
+                            width="50px"
+                            height="50px"
+                            class="img-fluid rounded-circle" 
+                        />
+                    </li>
+
+                    <li class="nav-item active">
+                        <a  (click)="sair()" class="font-weight-bold text-white">SAIR <i class="fa fa-sign-out" aria-hidden="true"></i></a>
+                    </li>
+                </ul> -->
+            </div>
+    </nav>
+
 </header>
