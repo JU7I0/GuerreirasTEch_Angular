@@ -11,7 +11,7 @@
           <a class="link" routerLink="/sobre">SOBRE NÓS | </a>
           <a class="link" routerLink="/inicio">MULHERES INSPIRADORAS | </a>
           <a class="link" routerLink="#">TODAS AS PUBLICAÇÕES | </a>
-          <a class="link" data-toggle="modal" data-target="#novaPostagem" (click)="publicar()">NOVA POSTAGEM </a>
+          <a class="link" data-toggle="modal" data-target="#novaPostagem">NOVA POSTAGEM </a>
         </div>
       </div>
   </div>
@@ -19,7 +19,7 @@
   <div div class="container-fluid pt-1">
       <div class="row justify-content-around">
         
-        <div class="col-md-9 d-flex align-items-center">
+        <div class="col-md-9 d-flex align-items-center" >
           <div class="col-md-4">
             <img class="img-fluid img-post" src="../../assets/img/quinto.webp"  alt="duas mulheres em frente do computador">
           </div>
@@ -236,7 +236,7 @@ aria-labelledby="staticBackdropLabel" aria-hidden="true">
         </div>
 
         <div class="form-group">
-            <label for="texto">Escolha um tema ou <a data-dismiss="modal" routerLink="/tema">cadastre um novo</a>: </label>
+            <label for="texto">Escolha um tema ou <a data-dismiss="modal" routerLink="/categorias">cadastre um novo</a>: </label>
             <select name="tema" id="tema" class="form-control" [(ngModel)]="idCategoria" (change)="findByIdCategoria()">
                 <option *ngFor="let item of listaCategorias" value="{{item.id}}">{{item.categoria}}</option>
             </select>

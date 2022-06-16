@@ -1,5 +1,4 @@
 import { Component, OnInit } from "@angular/core"
-import { Router } from "@angular/router"
 import { environment } from "src/environments/environment.prod"
 import { Categoria } from "../model/Categoria"
 import { Postagem } from "../model/Postagem"
@@ -7,7 +6,8 @@ import { Usuario } from "../model/Usuario"
 import { AuthService } from "../service/auth.service"
 import { PostagemService } from "../service/postagem.service"
 import { CategoriaService } from "../service/categoria.service"
-import { HttpHeaders } from "@angular/common/http"
+
+
 
 
 @Component({
@@ -18,11 +18,11 @@ import { HttpHeaders } from "@angular/common/http"
 export class InicioComponent implements OnInit {
 
   postagem: Postagem = new Postagem()
-  listaPostagens: Postagem[] = []
+  listaPostagens: Postagem[] 
   tituloPost: string
 
   categoria: Categoria = new Categoria()
-  listaCategorias: Categoria[] = []
+  listaCategorias: Categoria[]
   idCategoria: number
   nomeCategoria: string
 
@@ -33,19 +33,16 @@ export class InicioComponent implements OnInit {
   reverse = true
 
   constructor(
-    private router: Router,
     private postagemService: PostagemService,
     private categoriaService: CategoriaService,
-    public auth: AuthService
+    private auth: AuthService
   ) { }
 
 
   ngOnInit() {
     window.scroll(0,0)
 
-    /* if(environment.token == ''){
-      this.router.navigate(['/entrar'])
-    } */
+    
 
     this.auth.refreshToken()
     this.getAllCategorias()
@@ -84,8 +81,6 @@ export class InicioComponent implements OnInit {
 
     this.usuario.id = this.idUsuario
     this.postagem.usuario = this.usuario
-
-    console.log(this.postagem)
 
     this.postagemService.postPostagem(this.postagem).subscribe((resp: Postagem) => {
       this.postagem = resp
