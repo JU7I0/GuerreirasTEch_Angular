@@ -25,6 +25,8 @@ usuarioLogin:UsuarioLogin = new UsuarioLogin()
     this.auth.entrar(this.usuarioLogin).subscribe({
         next: (resp: UsuarioLogin)=>{
         this.usuarioLogin = resp
+        this.auth.nome = this.usuarioLogin.nome
+        this.auth.foto = this.usuarioLogin.foto
 
         environment.token = this.usuarioLogin.token
         environment.nome = this.usuarioLogin.nome

@@ -10,6 +10,10 @@ import { environment } from 'src/environments/environment.prod';
 })
 export class AuthService {
 
+  nome: string
+  foto: string
+
+  constructor( private http: HttpClient) { }
 
   token = {
     headers: new HttpHeaders().set('Authorization', environment.token),
@@ -21,9 +25,6 @@ export class AuthService {
     }
   }
 
-  constructor( 
-    private http: HttpClient
-  ) { }
 
 
   entrar(usuarioLogin: UsuarioLogin): Observable<UsuarioLogin> {
