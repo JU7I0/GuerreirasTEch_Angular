@@ -6,6 +6,16 @@ ul.social-network{
     
   }
 
+  ul.social-network li{
+    display: inline;
+    margin: 0;
+    padding: 5px;
+  }
+  
+  .bg-line{
+    background-color: #ce8f7d2c;
+  }
+
   .bg-rodape{
     width: 100%;
     background: #ce8f7d34;
@@ -24,21 +34,6 @@ ul.social-network{
     color: rgb(76, 49, 49);
     text-shadow: 2px 2px 2px #2f28283c;
 }
-
-
-  .bg-line{
-    background-color: #ce8f7d2c;
-  }
-
-  ul.social-network li{
-    display: inline;
-    margin: 0;
-    padding: 5px;
-
-  }
-  
-
-
 
   .fa{
     font-size: 35pt;

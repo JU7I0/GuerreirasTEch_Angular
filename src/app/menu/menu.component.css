@@ -1,13 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Ruda:wght@700&display=swap');
 
-.estilo-nav {
-    width: 100%;
-
-    background: #fff8e957;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px);
-    border: 1px solid rgba(255, 255, 255, 0.3);
+.bg-color{
+    background-color: #FFF8E9;
 }
 
 .estilo-fonte {
@@ -27,6 +21,12 @@
     text-shadow: 2px 2px 2px #B8B8B8;
 }
 
-.bg-color{
-    background-color: #FFF8E9;
-  }
+.estilo-nav {
+    width: 100%;
+
+    background: #fff8e957;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}

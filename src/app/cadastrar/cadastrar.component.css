@@ -1,13 +1,6 @@
-.bg-img{
-    background-image: url(../../assets/img/logo5.png);
-    width: 100%;
-    height: 100%;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-
-.text{
-    color:rgb(0, 0, 0);
+button:hover{
+    border: none;
+    font-weight: bolder;
 }
 
 form{
@@ -22,12 +15,19 @@ border: 1px solid rgba(255, 255, 255, 0.3);
 box-shadow: 5px 5px 16px 6px #000000;
 }
 
-button:hover{
-    border: none;
-    font-weight: bolder;
+.bg-img{
+    background-image: url(../../assets/img/logo5.png);
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .margem{
     margin-top: 100px;
     margin-bottom: 50px;
+}
+
+.text{
+    color:rgb(0, 0, 0);
 }
