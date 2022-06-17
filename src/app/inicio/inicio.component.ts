@@ -35,7 +35,7 @@ export class InicioComponent implements OnInit {
   constructor(
     private postagemService: PostagemService,
     private categoriaService: CategoriaService,
-    private auth: AuthService
+    public auth: AuthService
   ) { }
 
 

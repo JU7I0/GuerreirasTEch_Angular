@@ -12,7 +12,7 @@
       <div class="col-md-2 vh-100 p-0 m-0">
         <div class="sidenav m-0">
           <a href="#about">INÍCIO</a>
-          <a href="#postagem" data-toggle="modal" data-target="#novaPostagem">NOVA POSTAGEM</a>
+          <a href="#postagem" data-toggle="modal" data-target="#novaPostagem" *ngIf="auth.logado()" >NOVA POSTAGEM</a>
           <a href="#services">SOBRE NÓS</a>
           <a href="#contact">QUADRO DE VAGAS</a>
           <button class="dropdown-btn m-0" data-toggle="collapse" data-target="#collapseExample">CATEGORIAS
