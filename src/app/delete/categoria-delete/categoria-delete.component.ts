@@ -18,11 +18,13 @@ categoria: Categoria = new Categoria()
   constructor(
     private categoriaService: CategoriaService,
     private router: Router,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
   ) { }
 
   ngOnInit(){
     window.scroll(0,0)
+
+    this.categoriaService.refreshToken()
 
     if(environment.token == ''){
       this.router.navigate(['/entrar'])

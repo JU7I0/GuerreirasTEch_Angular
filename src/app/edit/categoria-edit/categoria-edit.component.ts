@@ -22,6 +22,8 @@ export class CategoriaEditComponent implements OnInit {
   ngOnInit() {
     window.scroll(0,0)
 
+    this.categoriaService.refreshToken()
+
     if (environment.token == '') {
       this.router.navigate(['/entrar'])
     }

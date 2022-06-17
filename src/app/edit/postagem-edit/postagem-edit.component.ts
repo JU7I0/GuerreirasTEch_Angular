@@ -23,12 +23,16 @@ export class PostagemEditComponent implements OnInit {
     private router: Router,
     private route: ActivatedRoute,
     private postagemService: PostagemService,
-    private categoriaService: CategoriaService
+    private categoriaService: CategoriaService,
+
   ) { }
 
   ngOnInit() {
 
     window.scroll(0,0)
+
+    this.categoriaService.refreshToken()
+    this.postagemService.refreshToken()
 
     if(environment.token == ''){
       this.router.navigate(['/entrar'])

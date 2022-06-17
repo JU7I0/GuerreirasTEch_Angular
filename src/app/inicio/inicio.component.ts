@@ -45,6 +45,7 @@ export class InicioComponent implements OnInit {
     
 
     this.auth.refreshToken()
+    this.postagemService.refreshToken()
     this.getAllCategorias()
     this.getAllPostagens()
 
@@ -81,10 +82,12 @@ export class InicioComponent implements OnInit {
 
     this.usuario.id = this.idUsuario
     this.postagem.usuario = this.usuario
+    console.log(this.usuario)
 
     this.postagemService.postPostagem(this.postagem).subscribe((resp: Postagem) => {
       this.postagem = resp
       alert('Postagem realizada com sucesso!')
+      console.log(this.postagem)
       this.postagem = new Postagem()
       this.getAllPostagens()
     })

@@ -13,7 +13,14 @@ export class PostagemService {
 
   token = {
     headers: new HttpHeaders().set('Authorization', environment.token)
+  
   }
+  refreshToken(){
+    this.token = {
+      headers: new HttpHeaders().set('Authorization', environment.token)
+    }
+  }
+
 
   getAllPostagens(): Observable<Postagem[]>{
     return this.http.get<Postagem[]>('https://guerreirastech.herokuapp.com/postagem', this.token)

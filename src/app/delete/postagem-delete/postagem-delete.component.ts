@@ -24,6 +24,8 @@ export class PostagemDeleteComponent implements OnInit {
 
     window.scroll(0,0)
 
+    this.postagemService.refreshToken()
+
     if(environment.token == ''){
       this.router.navigate(['/entrar'])
     }
