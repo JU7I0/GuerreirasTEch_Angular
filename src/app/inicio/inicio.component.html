@@ -10,8 +10,9 @@
 
       <!-- ! início do menu lateral -->
       <div class="col-md-2 vh-100 p-0 m-0">
-        <div class="sidenav">
+        <div class="sidenav m-0">
           <a href="#about">INÍCIO</a>
+          <a href="#postagem" data-toggle="modal" data-target="#novaPostagem">NOVA POSTAGEM</a>
           <a href="#services">SOBRE NÓS</a>
           <a href="#contact">QUADRO DE VAGAS</a>
           <button class="dropdown-btn m-0" data-toggle="collapse" data-target="#collapseExample">CATEGORIAS
@@ -29,29 +30,27 @@
       <!-- * Inicio de postagens -->
 
       
-      <div class="col-md-8 vh-100 bg-dark d-flex align-items-center">
+      <div class="col-md-8 vh-100 bg-dark d-flex align-items-center" *ngFor="let item of listaPostagens">
         <div class="col-md-4 d-flex">
-          <img class="img-fluid img-post margem" src="../../assets/img/quinto.webp"  alt="duas mulheres em frente do computador">
+          <img class="img-fluid img-post margem" src="{{item.foto}}"  alt="duas mulheres em frente do computador">
         </div>
 
         <div class="col-md-8">
           <h5>
-            QuintoAndar está com 40 vagas abertas para mulheres em tecnologia; se inscreva            
+            {{item.titulo}}
           </h5>
           <p>
-            "Hoje, contamos com 34% de mulheres na área de Tecnologia do QuintoAndar e 
-            queremos mais, sendo uma de nossas prioridades aumentar o número, 
-            principalmente, em cargos de gestão”, afirma Heloisa Vieira, gerente de 
-            Gestão de Pessoas para Tech no QuintoAndar. <br>
-            Dentro da área de Tecnologia, especificamente, existem outras iniciativas 
-            com o objetivo de suportar o desenvolvimento efetivo de profissionais 
-            mulheres. Uma delas é o Sponsorship, programa de aceleração de carreira 
-            para mulheres em posição de liderança técnica e de gestão, que são 
-            mentoradas por líderes sêniores de Engenharia, e o Tech Women, grupo de 
-            afinidade que conta com workgroup multidisciplinar para a troca de 
-            conhecimento, integração e o desenvolvimento das mulheres da área.
+            {{item.texto}}
+          </p>
+          <p>
+            <small>por: {{item.usuario.nome}}</small>
           </p> 
-          <a href="https://exame.com/carreira/ambev-quer-contratar-mais-de-50-mulheres-na-area-de-tecnologia/" target="_blank">Leia a notícia aqui</a>
+          <p>
+            <small>
+              {{item.dataP | date: 'dd/MM/yyyy'}} às {{item.dataP | date: 'HH:mm'}}
+            </small>
+          </p>
+          <a href="{{item.fonte}}" target="_blank">Leia a notícia aqui</a>
         </div>
       </div>
 
@@ -64,7 +63,8 @@
     </div>
 
     <!--CARROSSEL OPÇÃO 2-->
-<div id="carouselExampleFade" class="carousel slide carousel-fade" data-ride="carousel">
+    <div class="container-fluid">
+      <div id="carouselExampleFade" class="carousel slide carousel-fade" data-ride="carousel">
   <ol class="carousel-indicators">
     <li data-target="#carouselExampleFade" data-slide-to="0" class="active"></li>
     <li data-target="#carouselExampleFade" data-slide-to="1"></li>
@@ -130,6 +130,9 @@
 </div>
 
 
+    </div>
+
+
 
 
 </body>
@@ -147,22 +150,32 @@ aria-labelledby="staticBackdropLabel" aria-hidden="true">
         </div>
         <div class="modal-body">
 
-            <div class="form-group">
-                <label for="titulo">Título</label>
-                <input [(ngModel)]="postagem.titulo" type="text" class="form-control" id="texto" placeholder="Insira um título">
-            </div>
+          <div class="form-group">
+              <label for="titulo">Título</label>
+              <input [(ngModel)]="postagem.titulo" type="text" class="form-control" id="texto" placeholder="Insira um título">
+          </div>
 
-        <div class="form-group">
+          <div class="form-group">
             <label for="texto">Texto</label>
             <textarea [(ngModel)]="postagem.texto" class="form-control" name="texto" id="texto" rows="3"></textarea>
-        </div>
+          </div>
 
-        <div class="form-group">
+          <div class="form-group">
+              <label for="titulo">Foto</label>
+              <input [(ngModel)]="postagem.foto" type="text" class="form-control" id="texto" placeholder="Insira uma imagem, via link.">
+          </div>
+
+          <div class="form-group">
+              <label for="titulo">Fonte</label>
+              <input [(ngModel)]="postagem.fonte" type="text" class="form-control" id="texto" placeholder="É uma notícia? poderia inserir a fonte?">
+          </div>
+
+          <div class="form-group">
             <label for="texto">Escolha um tema ou <a data-dismiss="modal" routerLink="/categorias">cadastre um novo</a>: </label>
             <select name="tema" id="tema" class="form-control" [(ngModel)]="idCategoria" (change)="findByIdCategoria()">
                 <option *ngFor="let item of listaCategorias" value="{{item.id}}">{{item.categoria}}</option>
             </select>
-        </div>
+          </div>
 
         <div class="modal-footer">
         <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
