@@ -27,9 +27,7 @@ p, h5{
   border-bottom: 1px solid #AA5A58;
 }
 
-.estilo-img {
-  margin-top: 10%;
-}
+
 
 .estilo-nav {
   width: auto;
@@ -73,7 +71,7 @@ border-radius: 10px;
     background-image: url(../../assets/img/fundo-menu.png);
 
   /* Full height */
-    height: 100vh;
+    height: 50vh;
 
   /* Create the parallax scrolling effect */
     background-attachment: fixed;
@@ -104,7 +102,7 @@ border-radius: 10px;
     z-index: 1;
     top: 0;
     left: 0;
-    background-color: #111;
+    background-color: #FFF8E9;
     overflow-x: hidden;
     padding-top: 20px;
 }
@@ -115,7 +113,7 @@ border-radius: 10px;
     padding: 6px 8px 6px 16px;
     text-decoration: none;
     font-size: 20px;
-    color: #818181;
+    color: rgb(85, 66, 66);
     display: block;
     border: none;
     background: none;
@@ -128,7 +126,7 @@ border-radius: 10px;
 /* On mouse-over */
 .sidenav a:hover,
 .dropdown-btn:hover {
-    color: #f1f1f1;
+    color: #AA5A58;
 }
 
 /* Main content */
@@ -156,3 +154,4 @@ border-radius: 10px;
     float: right;
     padding-right: 8px;
 }
+
