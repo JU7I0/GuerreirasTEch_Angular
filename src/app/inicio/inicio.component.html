@@ -1,4 +1,4 @@
-<body class="body">
+<div class="body">
   <div class="container-fluid parallax">
     <div class="container-fluid d-flex justify-content-center">
       <img class="estilo-img" src="../../assets/img/Logo-removebg-preview.png" alt="logo">
@@ -103,9 +103,9 @@
       
       <div class="container p-0 m-0 col-md-8 body flex-column">
 
-
-        <!-- ! Todas postagens -->
-        <div id="todasPostagens" role="tabpanel" aria-labelledby="todasPostagens-tab">
+        <div class="tab-content" id="myTabContent">
+<!-- ! Todas postagens -->
+        <div class="tab-pane fade show active" id="todasPostagens" role="tabpanel" aria-labelledby="todasPostagens-tab">
         <div class="row justify-content-center " *ngFor="let postagem of listaPostagens">
           
           <div class="col-md-4 d-flex">
@@ -150,6 +150,8 @@
         </div>
         <!-- * Minhas postagens -->
 
+        </div>
+        
 
 
 
@@ -166,7 +168,7 @@
 
 
 
-</body>
+</div>
 
 
 <div class="modal fade" id="novaPostagem" tabindex="-1" role="dialog" 

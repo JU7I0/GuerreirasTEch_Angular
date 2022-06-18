@@ -64,6 +64,7 @@ export class UsuarioEditComponent implements OnInit {
   findByIdusuario(id: number) {
     this.authService.getByIdUsuario(id).subscribe((resp: Usuario) => {
       this.usuario = resp
+      this.usuario.senha = ''
     })
   }
 
