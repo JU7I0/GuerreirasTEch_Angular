@@ -27,6 +27,7 @@ usuarioLogin:UsuarioLogin = new UsuarioLogin()
         this.usuarioLogin = resp
         this.auth.nome = this.usuarioLogin.nome
         this.auth.foto = this.usuarioLogin.foto
+        this.auth.id = this.usuarioLogin.id
 
         environment.token = this.usuarioLogin.token
         environment.nome = this.usuarioLogin.nome

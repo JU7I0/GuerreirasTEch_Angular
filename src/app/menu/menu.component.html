@@ -16,8 +16,11 @@
             </div>
 
             <div *ngIf="auth.logado()" class="d-flex justify-content-between align-self-center align-content-center align-items-center">
-                <div class="mr-3">
-                    <p class="estilo-fonte" style="font-size: 14pt;">{{auth.nome}}</p>
+                <div class="mr-3 text-center">
+                    <p class="estilo-fonte m-0 p-0" style="font-size: 14pt;">{{auth.nome}}</p>
+                    <a class="text-dark" [routerLink]="['/usuario-edit', auth.id]">
+                        <small>EDITAR <i class="ml-2 fa fa-pencil" aria-hidden="true"></i></small>
+                    </a>
                 </div>
                 <div class="mr-3">
                     <img src="{{auth.foto}}" width="65px" height="65px" class=" border border-danger rounded rounded-circle" alt="foto_de_perfil">

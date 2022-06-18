@@ -12,6 +12,7 @@ export class AuthService {
 
   nome: string
   foto: string
+  id: number
 
   constructor( private http: HttpClient) { }
 

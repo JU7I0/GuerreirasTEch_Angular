@@ -1,4 +1,4 @@
-<body class="body">
+<div class="body">
   <div class="container-fluid parallax">
     <div class="container-fluid d-flex justify-content-center">
       <img class="estilo-img" src="../../assets/img/Logo-removebg-preview.png" alt="logo">
@@ -79,7 +79,8 @@
       <!-- ! início do menu lateral -->
       <div class="col-md-2 vh-100 p-0 m-0">
         <div class="sidenav m-0">
-          <a href="#postagem" data-toggle="modal" data-target="#novaPostagem" *ngIf="auth.logado()">NOVA POSTAGEM</a>
+          <a href="#postagem" data-toggle="modal" data-target="#novaPostagem" *ngIf="auth.logado()" >NOVA POSTAGEM</a>
+          <a *ngIf="auth.logado()" (click)="findByIdUsuario()" id="minhasPostagens-tab" data-toggle="tab" href="#minhasPostagens" role="tab" aria-controls="minhasPostagens" aria-selected="false">MINHAS POSTAGENS</a>
           <a href="#services">SOBRE NÓS</a>
           <a href="#contact">QUADRO DE VAGAS</a>
           <button class="dropdown-btn m-0" data-toggle="collapse" data-target="#collapseExample">CATEGORIAS
@@ -95,28 +96,62 @@
       <!-- ! Final do menu lateral -->
 
       <!-- * Inicio de postagens -->
-      <div class="col-md-8 vh-100 flex-column d-flex align-items-center mt-3" >
-        <div class="container-fluid" *ngFor="let item of listaPostagens">
+      <div class="container p-0 m-0 col-md-8 body flex-column">
+
+        <div class="tab-content" id="myTabContent">
+<!-- ! Todas postagens -->
+        <div class="tab-pane fade show active" id="todasPostagens" role="tabpanel" aria-labelledby="todasPostagens-tab">
+        <div class="row justify-content-center " *ngFor="let postagem of listaPostagens">
           <div class="col-md-4 d-flex">
-            <img class="img-fluid img-post margem" src="{{item.foto}}"  alt="duas mulheres em frente do computador">
+              <img class="img-fluid img-post margem" src="{{postagem.foto}}"  alt="duas mulheres em frente do computador">
           </div>
-  
-          <div class="col-md-8">
-            <h5>{{item.titulo}}</h5>
-            <p>{{item.texto}}</p>
-            <p>
-              <small>por: {{item.usuario.nome}}</small>
-            </p> 
-            <p>
-              <small>
-                {{item.dataP | date: 'dd/MM/yyyy'}} às {{item.dataP | date: 'HH:mm'}}
-              </small>
-            </p>
-            <a href="{{item.fonte}}" target="_blank">Leia a notícia aqui</a>
+
+          <div class="col-md-8 border rounded my-2">
+            <h4>{{postagem.titulo}}</h4>
+            <span>{{postagem.categoria.categoria}}</span>
+            <p>{{postagem.texto}}</p>
+            <small>
+              {{postagem.dataP | date: 'dd/MM/yyyy'}} às {{postagem.dataP | date: 'HH:mm'}}
+            </small>
+            <p>por: {{postagem.usuario.nome}}</p>
+            <a href="{{postagem.fonte}}" target="_blank">Leia a notícia aqui</a>
           </div>
         </div>
       </div>
-      <!-- * Final de postagens -->
+
+        <!-- ! Todas postagens -->
+
+        <!-- * Minhas postagens -->
+        <div class="tab-pane fade" id="minhasPostagens" role="tabpanel" aria-labelledby="minhasPostagens-tab">
+          <div class="row justify-content-center" *ngFor="let postagem of usuario.postagem">
+            
+            <div class="col-md-4 d-flex">
+              <img class="img-fluid img-post margem" src="{{postagem.foto}}"  alt="duas mulheres em frente do computador">
+            </div>
+            
+            <div class="col-md-8 border border-dark rounded my-2">
+              <h4>{{postagem.titulo}}</h4>
+              <span>{{postagem.categoria.categoria}}</span>
+              <p>{{postagem.texto}}</p>
+              <small class="text-muted">
+                  {{postagem.dataP | date: 'dd/MM/yyyy'}} às {{postagem.dataP | date: 'HH:mm'}}
+                </small>
+              <p>{{usuario.nome}}</p>
+              <a href="" class="text-info mr-3" [routerLink]="['/postagem-edit', postagem.id]">Editar</a>
+              <a href="" class="text-danger" [routerLink]="['/postagem-delete', postagem.id]">Apagar</a>
+            </div>
+          </div>
+        </div>
+        <!-- * Minhas postagens -->
+
+        </div>
+        
+
+
+
+      </div>
+      <!-- * Final de postagnes -->
+
 
       <!--Início da barra contribuidores -->
       <div class="col-md-2 vh-100 body mt-3">
@@ -133,7 +168,7 @@
 
 
 
-</body>
+</div>
 
 
 <div class="modal fade" id="novaPostagem" tabindex="-1" role="dialog" 
