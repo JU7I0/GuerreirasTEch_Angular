@@ -144,7 +144,7 @@
         <div class="tab-content" id="myTabContent">
 <!-- ! Todas postagens -->
         <div class="tab-pane fade show active" id="todasPostagens" role="tabpanel" aria-labelledby="todasPostagens-tab">
-        <div class="row justify-content-center " *ngFor="let postagem of listaPostagens">
+        <div class="row justify-content-center " *ngFor="let postagem of listaPostagens | orderBy: key : reverse">
           <div class="col-md-4 d-flex">
               <img class="img-fluid img-post margem" src="{{postagem.foto}}"  alt="duas mulheres em frente do computador">
           </div>
@@ -166,7 +166,7 @@
 
         <!-- * Minhas postagens -->
         <div class="tab-pane fade" id="minhasPostagens" role="tabpanel" aria-labelledby="minhasPostagens-tab">
-          <div class="row justify-content-center" *ngFor="let postagem of usuario.postagem">
+          <div class="row justify-content-center" *ngFor="let postagem of usuario.postagem | orderBy: key : reverse">
             
             <div class="col-md-4 d-flex">
               <img class="img-fluid img-post margem" src="{{postagem.foto}}"  alt="duas mulheres em frente do computador">

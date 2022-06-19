@@ -19,6 +19,7 @@ import { CategoriaDeleteComponent } from './delete/categoria-delete/categoria-de
 import { PostagemEditComponent } from './edit/postagem-edit/postagem-edit.component';
 import { PostagemDeleteComponent } from './delete/postagem-delete/postagem-delete.component';
 import { UsuarioEditComponent } from './edit/usuario-edit/usuario-edit.component';
+import { OrderModule } from 'ngx-order-pipe';
 
 
 
@@ -43,7 +44,8 @@ import { UsuarioEditComponent } from './edit/usuario-edit/usuario-edit.component
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    OrderModule
   ],
   providers: [{
     provide: LocationStrategy,
