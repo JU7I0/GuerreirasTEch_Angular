@@ -140,3 +140,7 @@ label {
     background-color: rgb(255, 147, 147);
     color: rgb(255, 255, 255);
 }
+
+.tamanho{
+    font-size: 20pt;
+}

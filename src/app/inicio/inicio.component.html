@@ -78,7 +78,7 @@
 <!--/Carousel-->
 
 <!--TESTE-->
-<div class="row my-4">
+<div class="row body">
   <div class="container d-flex flex-column" id="postagens">
     <ul class="nav nav-tabs d-flex justify-content-center" id="myTab" role="tablist">
       <li class="nav-item" role="presentation">
@@ -92,47 +92,8 @@
       </li>
     </ul>
     <div class="tab-content" id="myTabContent">
-      <!-- ! Inicio do Todas Postagens -->
-      <div class="tab-pane fade show active" id="todasPostagens" role="tabpanel" aria-labelledby="todasPostagens-tab">
-        <div class="row">
-          <div class="col-md-4" *ngFor="let postagem of listaPostagens">
-            <p>{{postagem.titulo}}</p>
-            <p>{{postagem.texto}}</p>
-            <p>{{postagem.categoria.categoria}}</p>
-            <p>{{postagem.usuario.nome}}</p>
-          </div>
-        </div>
-      </div>
-      <!-- ! Fim do Todas Postagens -->
 
-      <!-- ? Inicio do Minhas Postagens -->
-      <div class="tab-pane fade" id="minhasPostagens" role="tabpanel" aria-labelledby="minhasPostagens-tab">
-        <div class="row">
-          <div class="col-md-3" *ngFor="let postagem of usuario.postagem">
-            <p>{{usuario.nome}}</p>
-            <p>{{postagem.titulo}}</p>
-            <a [routerLink]="['/postagem-edit', postagem.id]">Editar</a>
-            <a [routerLink]="['/postagem-delete', postagem.id]">Apagar</a>
-          </div>
-        </div>
-      </div>
-      <!-- ? Fim do Minhas Postagens -->
-
-      <!-- * Inicio do Postagens por Tema -->
-      <div class="tab-pane fade" id="postagensTema" role="tabpanel" aria-labelledby="postagensTema-tab">
-        <div class="row flex-column" *ngFor="let tema of listaCategorias">
-          <h3>{{categoria.categoria}}</h3>
-          <div class="row">
-            <div class="col-md-4" *ngFor="let postagem of tema.postagem">
-              <p>{{postagem.titulo}}</p>
-              <p>{{postagem.texto}}</p>
-              <p>{{postagem.dataP}}</p>
-              <p>{{postagem.usuario.nome}}</p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- * Fim do Postagens por Tema -->
+      
     </div>
   </div>
 </div>
@@ -146,10 +107,10 @@
         <div class="tab-pane fade show active" id="todasPostagens" role="tabpanel" aria-labelledby="todasPostagens-tab">
         <div class="row justify-content-center " *ngFor="let postagem of listaPostagens | orderBy: key : reverse">
           <div class="col-md-4 d-flex">
-              <img class="img-fluid img-post margem" src="{{postagem.foto}}"  alt="duas mulheres em frente do computador">
+              <img class="img-fluid img-post margem borda" src="{{postagem.foto}}"  alt="duas mulheres em frente do computador">
           </div>
 
-          <div class="col-md-7 borda my-2">
+          <div class="col-md-7 borda my-2 p-3">
             <h4>{{postagem.titulo}}</h4>
             <span>{{postagem.categoria.categoria}}</span>
             <p>{{postagem.texto}}</p>
@@ -186,6 +147,25 @@
           </div>
         </div>
         <!-- * Minhas postagens -->
+
+        <!-- * Inicio do Postagens por Tema -->
+      <div class="tab-pane fade" id="postagensTema" role="tabpanel" aria-labelledby="postagensTema-tab">
+        <div class="row flex-column" *ngFor="let tema of listaCategorias">
+          <h3>{{categoria.categoria}}</h3>
+          <div class="row">
+            <div class="col-md-4" *ngFor="let postagem of categoria.postagem">
+              <h4>{{postagem.titulo}}</h4>
+              <span>{{postagem.categoria.categoria}}</span>
+              <p>{{postagem.texto}}</p>
+              <small class="text-muted">
+                  {{postagem.dataP | date: 'dd/MM/yyyy'}} às {{postagem.dataP | date: 'HH:mm'}}
+                </small>
+              <p>{{usuario.nome}}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- * Fim do Postagens por Tema -->
 
         </div>
         
