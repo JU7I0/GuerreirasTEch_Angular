@@ -43,6 +43,7 @@ export class UsuarioEditComponent implements OnInit {
 
   atualizar() {
     this.usuario.tipo = this.tipoUsuario
+  
 
     if (this.usuario.senha != this.confirmarSenha) {
       alert('A senhas estão incorretas.')
