@@ -82,7 +82,7 @@
         <a class="nav-link active text-dark font-weight-bold" id="todasPostagens-tab" data-toggle="tab" href="#todasPostagens" role="tab" aria-controls="todasPostagens" aria-selected="true">Todas as postagens</a>
       </li>
       <li class="nav-item" role="presentation">
-        <a (click)="findByIdUsuario()" class="nav-link text-dark font-weight-bold" id="minhasPostagens-tab" data-toggle="tab" href="#minhasPostagens" role="tab" aria-controls="minhasPostagens" aria-selected="false">Minhas Postagens</a>
+        <a (click)="findByIdUsuario()" class="nav-link text-dark font-weight-bold" id="minhasPostagens-tab" data-toggle="tab" href="#minhasPostagens" role="tab" aria-controls="minhasPostagens" aria-selected="false" *ngIf="auth.logado()">Minhas Postagens</a>
       </li>
       <li class="nav-item" role="presentation">
         <a class="nav-link text-dark font-weight-bold" id="postagensTema" data-toggle="tab" href="#postagensTema" role="tab" aria-controls="postagensTema" aria-selected="false">Postagens por tema</a>
@@ -145,7 +145,7 @@
         <!-- * Minhas postagens -->
 
         <!-- ? Inicio do Postagens por Tema -->
-      <div class="tab-pane fade" id="postagensTema" role="tabpanel" aria-labelledby="postagensTema-tab" *ngFor="let categoria of listaCategorias">
+      <div class="tab-pane fade" id="postagensTema" role="tabpanel" aria-labelledby="postagensTema-tab" >
         <div class="justify-content-center" *ngFor="let postagens of categoria.postagem | orderBy: key : reverse">
 
           <div class="col-md-4 d-flex">
@@ -265,25 +265,18 @@
       <!-- Final da barra de contribuidores -->
     </div>
 
-
-
-
-
-
-
-
-
-<div class="modal fade" id="novaPostagem" tabindex="-1" role="dialog" 
+<!--* MODAL NOVA POSTAGEM-->
+<div class="modal fade nav-2" id="novaPostagem" tabindex="-1" role="dialog" 
 aria-labelledby="staticBackdropLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
-        <div class="modal-header">
+        <div class="modal-header body">
         <h5 class="modal-title" id="staticBackdropLabel">Nova Postagem</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
         </button>
         </div>
-        <div class="modal-body">
+        <div class="modal-body body">
 
           <div class="form-group">
               <label for="titulo">Título</label>
@@ -316,3 +309,5 @@ aria-labelledby="staticBackdropLabel" aria-hidden="true">
         <button type="button" class="btn btn-dark" data-dismiss="modal">Cancelar</button>
         <button type="button" class="btn btn-dark" (click)="publicar()" data-dismiss="modal">Publicar</button>
         </div>
+
+<!--*FIM MODAL NOVA POSTAGEM-->

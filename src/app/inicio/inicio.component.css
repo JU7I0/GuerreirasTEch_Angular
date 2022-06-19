@@ -6,6 +6,8 @@ a, h4, h5, p, span, small{
   color: white;
 }
 
+
+
 .modal-content h5, a, option{
   color: black;
 }
@@ -72,6 +74,12 @@ a, h4, h5, p, span, small{
   -webkit-backdrop-filter: blur(5px);
   border: 1px solid rgba(0, 0, 0, 0);
   border-radius: 30px;
+}
+
+.nav-2{
+  background: #00000071;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.464);
+  backdrop-filter: blur(5px);
 }
 
 .fa-caret-down {
@@ -188,5 +196,9 @@ margin-bottom: 2px;
 .sidenav a:hover,
 .dropdown-btn:hover {
   color: #AA5A58;
+}
+
+.text-center i{
+  color: white;
 }
 
