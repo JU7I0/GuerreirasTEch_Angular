@@ -1,23 +1,27 @@
 <div class="body">
   <div class="container-fluid parallax">
     <div class="container-fluid d-flex justify-content-center">
-      <img class="estilo-img" src="../../assets/img/Logo-removebg-preview.png" alt="logo">
+      <img class="estilo-img mt-2" src="../../assets/img/Logo-removebg-preview.png" alt="logo">
     </div>
-  </div> 
+  </div>
+  </div>
 
-      <!--CARROSSEL OPÇÃO 2-->
-<div class="container-fluid">
-  <div id="carouselExampleFade" class="carousel slide carousel-fade" data-ride="carousel">
+<!--Carousel-->
+
+  <div id="carouselExampleFade" class="carousel slide carousel-fade body" data-ride="carousel">
     <ol class="carousel-indicators">
-      <li data-target="#carouselExampleFade" data-slide-to="0" class="active"></li>
-      <li data-target="#carouselExampleFade" data-slide-to="1"></li>
-      <li data-target="#carouselExampleFade" data-slide-to="2"></li>
+      <li class="bg-dark" data-target="#carouselExampleFade" data-slide-to="0"></li>
+      <li class="bg-dark" data-target="#carouselExampleFade" data-slide-to="1"></li>
+      <li class="bg-dark" data-target="#carouselExampleFade" data-slide-to="2"></li>
     </ol>
   
-    <div class="carousel-inner ml-5 mb-5">
-        <div class="carousel-item active ">
-          <img src="../../assets/img/debora-falcao.jpg" class="img-insp" alt="mulher sentada em um banco">
-            <div class="carousel-caption d-none d-md-block estilo-nav">
+    <div class="carousel-inner d-flex justify-items-center pl-5 pb-5 pt-5">
+        <div class="carousel-item active">
+          <div class="col.md-2">
+            <img class="img-insp" src="../../assets/img/debora-falcao.jpg" alt="mulher sentada em um banco">
+          </div>
+          
+            <div class="carousel-caption d-none d-md-block col-md-8">
               <h5>Débora Falcão</h5>
               <p>
                 "Tecnologia não era minha primeira opção, tentei engenharia civil, mas parti para a segunda opção, que era a 
@@ -30,9 +34,9 @@
             </div>
         </div>
     
-        <div class="carousel-item ">
-          <img src="../../assets/img/victoria-yolanda.jpeg" class="img-insp" alt="mulher cabelos cacheados de óculos de grau">
-            <div class="carousel-caption d-none d-md-block estilo-nav">
+        <div class="carousel-item">
+          <img class="img-insp" src="../../assets/img/victoria-yolanda.jpeg"  alt="mulher cabelos cacheados de óculos de grau">
+            <div class="carousel-caption d-none d-md-block ">
               <h5>Victoria Yolanda</h5>
               <p>
                 "Entrar na área de tecnologia foi um divisor de águas na minha vida. Sair da 
@@ -50,9 +54,9 @@
             </div>
         </div>
     
-        <div class="carousel-item ">
-          <img src="../../assets/img/louise-figueira.jpeg" class="img-insp" alt="mulher de cabelos cacheados e óculos de grau">
-            <div class="carousel-caption d-none d-md-block estilo-nav">
+        <div class="carousel-item">
+          <img class="img-insp " src="../../assets/img/louise-figueira.jpeg"  alt="mulher de cabelos cacheados e óculos de grau">
+            <div class="carousel-caption d-none d-md-block ">
               <h5>Louíse Figueira</h5>
               <p>
                 "Iniciei minha carreira na área da tecnologia através de Academia SAP promovida 
@@ -71,33 +75,72 @@
         </div>
     </div>
   </div>
-</div>
+<!--/Carousel-->
 
-<hr>
-
-  <div class="container-fluid d-flex p-0 mt-3">
-      <!-- ! início do menu lateral -->
-      <div class="col-md-2 vh-100 p-0 m-0">
-        <div class="sidenav m-0">
-          <a href="#postagem" data-toggle="modal" data-target="#novaPostagem" *ngIf="auth.logado()" >NOVA POSTAGEM</a>
-          <a *ngIf="auth.logado()" (click)="findByIdUsuario()" id="minhasPostagens-tab" data-toggle="tab" href="#minhasPostagens" role="tab" aria-controls="minhasPostagens" aria-selected="false">MINHAS POSTAGENS</a>
-          <a href="#services">SOBRE NÓS</a>
-          <a href="#contact">QUADRO DE VAGAS</a>
-          <button class="dropdown-btn m-0" data-toggle="collapse" data-target="#collapseExample">CATEGORIAS
-            <i class="fa fa-caret-down"></i>
-          </button>
-          <div class="collapse" id="collapseExample">
-            <a href="#">MULHERES INSPIRADORAS</a>
-            <a href="#">NOTÍCIAS</a>
-            <a href="#">REDE DE APOIO</a>
+<!--TESTE-->
+<div class="row my-4">
+  <div class="container d-flex flex-column" id="postagens">
+    <ul class="nav nav-tabs d-flex justify-content-center" id="myTab" role="tablist">
+      <li class="nav-item" role="presentation">
+        <a class="nav-link active text-dark font-weight-bold" id="todasPostagens-tab" data-toggle="tab" href="#todasPostagens" role="tab" aria-controls="todasPostagens" aria-selected="true">Todas as postagens</a>
+      </li>
+      <li class="nav-item" role="presentation">
+        <a (click)="findByIdUsuario()" class="nav-link text-dark font-weight-bold" id="minhasPostagens-tab" data-toggle="tab" href="#minhasPostagens" role="tab" aria-controls="minhasPostagens" aria-selected="false">Minhas Postagens</a>
+      </li>
+      <li class="nav-item" role="presentation">
+        <a class="nav-link text-dark font-weight-bold" id="postagensTema-tab" data-toggle="tab" href="#postagensTema" role="tab" aria-controls="postagensTema" aria-selected="false">Postagens por tema</a>
+      </li>
+    </ul>
+    <div class="tab-content" id="myTabContent">
+      <!-- ! Inicio do Todas Postagens -->
+      <div class="tab-pane fade show active" id="todasPostagens" role="tabpanel" aria-labelledby="todasPostagens-tab">
+        <div class="row">
+          <div class="col-md-4" *ngFor="let postagem of listaPostagens">
+            <p>{{postagem.titulo}}</p>
+            <p>{{postagem.texto}}</p>
+            <p>{{postagem.categoria.categoria}}</p>
+            <p>{{postagem.usuario.nome}}</p>
           </div>
         </div>
       </div>
-      <!-- ! Final do menu lateral -->
+      <!-- ! Fim do Todas Postagens -->
 
+      <!-- ? Inicio do Minhas Postagens -->
+      <div class="tab-pane fade" id="minhasPostagens" role="tabpanel" aria-labelledby="minhasPostagens-tab">
+        <div class="row">
+          <div class="col-md-3" *ngFor="let postagem of usuario.postagem">
+            <p>{{usuario.nome}}</p>
+            <p>{{postagem.titulo}}</p>
+            <a [routerLink]="['/postagem-edit', postagem.id]">Editar</a>
+            <a [routerLink]="['/postagem-delete', postagem.id]">Apagar</a>
+          </div>
+        </div>
+      </div>
+      <!-- ? Fim do Minhas Postagens -->
+
+      <!-- * Inicio do Postagens por Tema -->
+      <div class="tab-pane fade" id="postagensTema" role="tabpanel" aria-labelledby="postagensTema-tab">
+        <div class="row flex-column" *ngFor="let tema of listaCategorias">
+          <h3>{{categoria.categoria}}</h3>
+          <div class="row">
+            <div class="col-md-4" *ngFor="let postagem of tema.postagem">
+              <p>{{postagem.titulo}}</p>
+              <p>{{postagem.texto}}</p>
+              <p>{{postagem.dataP}}</p>
+              <p>{{postagem.usuario.nome}}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- * Fim do Postagens por Tema -->
+    </div>
+  </div>
+</div>
+<!--/TESTE-->
+
+  <div class="container-fluid d-flex body">
       <!-- * Inicio de postagens -->
-      <div class="container p-0 m-0 col-md-8 body flex-column">
-
+      <div class="container-fluid p-2 col-md-9 bg-2 flex-column">
         <div class="tab-content" id="myTabContent">
 <!-- ! Todas postagens -->
         <div class="tab-pane fade show active" id="todasPostagens" role="tabpanel" aria-labelledby="todasPostagens-tab">
@@ -106,7 +149,7 @@
               <img class="img-fluid img-post margem" src="{{postagem.foto}}"  alt="duas mulheres em frente do computador">
           </div>
 
-          <div class="col-md-8 border rounded my-2">
+          <div class="col-md-7 borda my-2">
             <h4>{{postagem.titulo}}</h4>
             <span>{{postagem.categoria.categoria}}</span>
             <p>{{postagem.texto}}</p>
@@ -154,11 +197,96 @@
 
 
       <!--Início da barra contribuidores -->
-      <div class="col-md-2 vh-100 body mt-3">
-        <div>
-        <!--  <img src="https://i.imgur.com/MzyhSH5.jpg" alt=""> -->
-          <p>Bruna</p>
+      <div class="col-md-2 bg-2 mb-3">
+        <div class="text-center border-bottom">
+        <img class="img-colab" src="https://i.imgur.com/MzyhSH5.jpg?2"  alt="">
+        <p class="m-0 ">Bruna Martins</p>
+        <small>5 Contribuições</small> <br>
+        <a class="mr-2" href="https://www.linkedin.com/in/bruna-martins-917b24234/">
+          <i class="fa fa-linkedin" aria-hidden="true"></i>
+        </a>
+        <a href="https://github.com/brunamartinsh">
+          <i class="fa fa-github" aria-hidden="true"></i>
+        </a>
         </div>
+
+        <div class="text-center border-bottom">
+          <img src="https://i.imgur.com/Lb8KTco.jpg?2" class="img-colab" alt="">
+          <p class="m-0">Gabriela Felix</p>
+          <small>5 Contribuições</small> <br>
+          <a class="mr-2" href="https://www.linkedin.com/in/gabriela-felix-de-brito/">
+            <i class="fa fa-linkedin" aria-hidden="true"></i>
+          </a>
+          <a href="https://github.com/gabifbdev">
+            <i class="fa fa-github" aria-hidden="true"></i>
+          </a>
+          </div>
+
+
+          <div class="text-center border-bottom">
+            <img src="https://i.imgur.com/xmzZSZ1.jpg?1" class="img-colab" alt="">
+            <p class="m-0">Julio Barros</p>
+            <small>5 Contribuições</small> <br>
+            <a class="mr-2" href="https://www.linkedin.com/in/juliocezarbarros/">
+              <i class="fa fa-linkedin" aria-hidden="true"></i>
+            </a>
+            <a href="https://github.com/JU7I0">
+              <i class="fa fa-github" aria-hidden="true"></i>
+            </a>
+            </div>
+
+
+          <div class="text-center border-bottom">
+            <img src="https://i.imgur.com/nqaIM0H.jpg?2" class="img-colab" alt="">
+            <p class="m-0">Kamila Lima</p>
+            <small>5 Contribuições</small> <br>
+            <a class="mr-2" href="https://www.linkedin.com/in/kamila-lima-falcao/">
+              <i class="fa fa-linkedin" aria-hidden="true"></i>
+            </a>
+            <a href="https://github.com/kamilaaliima">
+              <i class="fa fa-github" aria-hidden="true"></i>
+            </a>
+            </div>
+
+
+            <div class="text-center border-bottom">
+              <img src="https://i.imgur.com/BLtYpG2.jpg?1" class="img-colab" alt="">
+              <p class="m-0">Kemelly Nascimento</p>
+              <small>5 Contribuições</small> <br>
+              <a class="mr-2" href="https://www.linkedin.com/in/kemelly-nascimento/">
+                <i class="fa fa-linkedin" aria-hidden="true"></i>
+              </a>
+              <a href="https://github.com/kemellynasc">
+                <i class="fa fa-github" aria-hidden="true"></i>
+              </a>
+              </div>
+
+
+            <div class="text-center border-bottom">
+              <img src="https://i.imgur.com/UiUyTl8.jpg?1" class="img-colab" alt="">
+              <p class="m-0">Laise Figueira</p>
+              <small>5 Contribuições</small> <br>
+              <a class="mr-2" href="https://www.linkedin.com/in/laise-figueira/">
+                <i class="fa fa-linkedin" aria-hidden="true"></i>
+              </a>
+              <a href="https://github.com/Laisefig">
+                <i class="fa fa-github" aria-hidden="true"></i>
+              </a>
+              </div>
+
+
+            <div class="text-center mt-2 mb-2">
+              <img src="https://i.imgur.com/zXDmp3T.jpg?1" class="img-colab" alt="">
+              <p class="m-0">Lavínia Amorim</p>
+              <small>5 Contribuições</small> <br>
+              <a class="mr-2" href="https://www.linkedin.com/in/lavinia-amorim/">
+                <i class="fa fa-linkedin" aria-hidden="true"></i>
+              </a>
+              <a href="https://github.com/larvakent">
+                <i class="fa fa-github" aria-hidden="true"></i>
+              </a>
+              </div>
+
       </div>
       <!-- Final da barra de contribuidores -->
     </div>
@@ -168,7 +296,7 @@
 
 
 
-</div>
+
 
 
 <div class="modal fade" id="novaPostagem" tabindex="-1" role="dialog" 
