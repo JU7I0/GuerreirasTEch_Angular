@@ -36,6 +36,10 @@ export class AuthService {
     return this.http.post<Usuario>('https://guerreirastech.herokuapp.com/usuarios/cadastrar', usuario)
   }
 
+  editar(usuario: Usuario): Observable<Usuario> {
+    return this.http.put<Usuario>('https://guerreirastech.herokuapp.com/usuarios/atualizar', usuario, this.token)
+  }
+
   getByIdUsuario(id: number): Observable<Usuario>{
     return this.http.get<Usuario>(`https://guerreirastech.herokuapp.com/usuarios/${id}`, this.token)
   }
