@@ -1,44 +1,142 @@
 @import url('https://fonts.googleapis.com/css2?family=Ruda:wght@700&display=swap');
 
 
-.bg-color{
-    background-color: #FFF8E9; 
-    }
-.fsize{
-    font-size: 17pt;
+* {
+    padding: 0;
+    margin: 0;
 }
 
-.estilo-nav {
-    width: 100%;
+/* * barra de menu */
 
-    background: #fff8e957;
+.barra {
+    width: 100%;
+    height: 50px;
+    background: rgba(206, 143, 125, 0.664);
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px);
-    border: 1px solid rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(6.9px);
+    -webkit-backdrop-filter: blur(6.9px);
+    border: 1px solid rgba(255, 180, 211, 0.3);
 }
 
 .estilo-fonte {
     font-family: 'Ruda', sans-serif;
     font-weight: bolder;
     border-radius: 5px;
-    color: rgb(85, 66, 66);
+    color: rgb(70, 0, 58);
     text-shadow: 2px 2px 2px #B8B8B8;
 }
+
+
 
 .estilo-marca {
     font-family: 'Ruda', sans-serif;
     font-size: 20pt;
-    color: rgb(85, 66, 66);
+    color: rgb(70, 0, 58);
     text-shadow: 2px 2px 2px #B8B8B8;
 }
 
-.estilo-nav {
-    width: 100%;
+.fsize{
+    font-size: 14pt;
+}
 
-    background: #fff8e957;
+
+/* * MENU LATERAL */
+
+.linkmenu {
+    text-decoration: none;
+    color: black;
+    display: block;
+    padding: 20px 5px 20px 5px;
+    color: rgb(0, 0, 0);
+}
+
+.linkmenu:hover {
+    background-color: rgb(255, 147, 147);
+    color: black;
+    text-decoration: none;
+}
+
+li {
+    list-style: none;
+    text-align: center;
+}
+
+.hamburg {
+    width: 25px;
+}
+
+ul {
+    position: absolute;
+    top: 50px;
+    width: 100%;
+    padding-inline-start: 0;
+}
+
+
+
+input[type="checkbox"] {
+    display: none;
+}
+
+
+
+.menu {
+
+    position: absolute;
+    width: 215px;
+    height: 100vh;
+    left: -352px;
+    transition: all .5s;
+    z-index: 1;
+    background: rgba(170, 89, 88, 0.253);
+    background: linear-gradient(0deg, rgba(170, 90, 88, 0.253) 0%, rgba(208, 113, 112, 0.253) 33%, rgba(206, 143, 125, 0.664) 98%);
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px);
-    border: 1px solid rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(6.9px);
+    -webkit-backdrop-filter: blur(6.9px);
+    border: 1px solid rgba(255, 180, 211, 0.3);
+}
+
+input[type="checkbox"]:checked~nav {
+    transform: translateX(350px);
+}
+
+
+
+label {
+    padding: 10px 10px 10px 20px;
+    position: absolute;
+    z-index: 2;
+    margin: 0;
+}
+
+/* * MENU LATERAL */
+
+
+.sidenav {
+    overflow-x: hidden;
+    padding-top: 20px;
+}
+
+/* Style the sidenav links and the dropdown button */
+.sidenav .linkmenu,
+.dropdown-btn {
+    padding: 6px 8px 6px 16px;
+    text-decoration: none;
+    font-size: 20px;
+    color: rgb(70, 0, 58);
+    display: block;
+    border: none;
+    background: none;
+    width: 100%;
+    text-align: left;
+    cursor: pointer;
+    outline: none;
+    font-weight: 600;
+}
+
+/* On mouse-over */
+.sidenav .linkmenu:hover,
+.dropdown-btn:hover {
+    background-color: rgb(255, 147, 147);
+    color: rgb(255, 255, 255);
 }

@@ -1,55 +1,55 @@
 <header class="container-fluid p-0 fixed-top">
-    <nav class="navbar estilo-nav">
-        <div class="container-fluid m-0">
+    <input type="checkbox" id="check">
+    <label for="check">
+        <i class="fa fa-superpowers" aria-hidden="true"></i>
+    </label>
 
-            <div>
-                <a class="estilo-fonte fsize" routerLink="/inicio">INÍCIO</a>
-            </div>
+    <nav class="menu sidenav">
+        <ul>
+            <li class="mb-2">
+                <div *ngIf="auth.logado()" class="d-flex align-content-center">
+                    <div class="mx-3">
+                        <img src="{{auth.foto}}" width="50px" height="50px" class=" border border-danger rounded rounded-circle" alt="foto_de_perfil">
+                    </div>
+                    <div class="mr-3 text-center">
+                        <p class="estilo-fonte m-0 p-0" style="font-size: 14pt;">{{auth.nome}}</p>
+                        <a class="text-dark" [routerLink]="['/usuario-edit', id]">
+                            <small class="font-weight-bold">EDITAR <i class="ml-2 fa fa-pencil" aria-hidden="true"></i></small>
+                        </a>
+                    </div>
+                </div>
+            </li>
+            <li><a class="linkmenu" href="#">INÍCIO</a></li>
+            <li><a class="linkmenu" *ngIf="auth.logado()" href="#" data-toggle="modal" data-target="#novaPostagem">NOVA POSTAGEM</a></li>
+            <li><a class="linkmenu" href="#">SOBRE NÓS</a></li>
+            <li>
+                <div class="linkmenu dropdown-btn m-0" data-toggle="collapse" data-target="#collapseExample">CATEGORIAS
+                    <i class="fa fa-caret-down"></i>
+                </div>
+                <div class="collapse" id="collapseExample">
+                    <a class="linkmenu">Link 1</a>
+                    <a class="linkmenu" href="#">Link 2</a>
+                    <a class="linkmenu" href="#">Link 3</a>
+                </div>
+            </li>
+        </ul>
+    </nav>
 
+    <div class="container-fluid d-flex barra">
+        <div class="col-md-4"></div>
+
+        <div class="col-md-4 text-center align-self-center">
             <div>
                 <p class="estilo-marca">GUERREIRAS TECH</p>
             </div>
-
-
-            <div *ngIf="!auth.logado()">
-                <a class="estilo-fonte fsize" routerLink="/entrar">LOGIN</a>
+        </div>
+        <div class="col-md-4 d-flex justify-content-end align-self-center">
+            <div class="mr-5" *ngIf="!auth.logado()">
+                <a class="estilo-fonte fsize " routerLink="/entrar">LOGIN</a>
             </div>
-
-            <div *ngIf="auth.logado()" class="d-flex justify-content-between align-self-center align-content-center align-items-center">
-                <div class="mr-3 text-center">
-                    <p class="estilo-fonte m-0 p-0" style="font-size: 14pt;">{{auth.nome}}</p>
-                    <a class="text-dark" [routerLink]="['/usuario-edit', auth.id]">
-                        <small>EDITAR <i class="ml-2 fa fa-pencil" aria-hidden="true"></i></small>
-                    </a>
-                </div>
-                <div class="mr-3">
-                    <img src="{{auth.foto}}" width="65px" height="65px" class=" border border-danger rounded rounded-circle" alt="foto_de_perfil">
-                </div>
-                <div *ngIf="auth.logado()">
-                    <a  (click)="sair()" class="estilo-fonte fsize">SAIR <i class="fa fa-sign-out" aria-hidden="true"></i></a>
-                </div>
+            <div class="mr-5" *ngIf="auth.logado()">
+                <a  (click)="sair()" class="estilo-fonte fsize">SAIR <i class="fa fa-sign-out" aria-hidden="true"></i></a>
             </div>
-
-                <!-- <ul class="navbar-nav d-flex align-items-center mr-4" >
-                    <li class="nav-item pr-3">
-                    <p class="m-0 font-weight-bolder text-white" >{{nome}}</p>
-                    </li>
-
-                    <li class="nav-item active mr-4" >
-                        <img
-                            src={{foto}}
-                            alt="foto de perfil"
-                            width="50px"
-                            height="50px"
-                            class="img-fluid rounded-circle" 
-                        />
-                    </li>
-
-                    <li class="nav-item active">
-                        <a  (click)="sair()" class="font-weight-bold text-white">SAIR <i class="fa fa-sign-out" aria-hidden="true"></i></a>
-                    </li>
-                </ul> -->
-            </div>
-    </nav>
-
+        </div>
+    </div>
 </header>
