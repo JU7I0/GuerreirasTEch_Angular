@@ -16,6 +16,7 @@ a, h4, h5, p, span, small{
 
 .borda{
   border: 1px solid #FFF8E9;
+  border-radius: 30px;
 }
 
 .bg-2{
@@ -124,6 +125,14 @@ margin-top: 2px;
 margin-bottom: 2px;
 }
 
+.nav-item:hover{
+  background-color: #AA5A58;
+}
+
+.nav-item:active{
+  background-color: #AA5A58;
+}
+
 .parallax {
   /* The image used */
     background-image: url(../../assets/img/fundo-menu.png);
@@ -172,3 +181,4 @@ margin-bottom: 2px;
 .dropdown-btn:hover {
     color: #AA5A58;
 }
+

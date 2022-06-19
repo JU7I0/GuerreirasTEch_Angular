@@ -20,6 +20,7 @@
     "@angular/router": "~13.3.0",
     "bootstrap": "^4.6.0",
     "jquery": "^3.6.0",
+    "ngx-order-pipe": "^2.2.0",
     "popper.js": "^1.16.1",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",
