@@ -1,8 +1,5 @@
 <div class="body">
   <div class="container-fluid parallax">
-    <div class="container-fluid d-flex justify-content-center">
-      <img class="estilo-img mt-2" src="../../assets/img/Logo-removebg-preview.png" alt="logo">
-    </div>
   </div>
   </div>
 
@@ -81,14 +78,14 @@
 <div class="row body">
   <div class="container d-flex flex-column" id="postagens">
     <ul class="nav nav-tabs d-flex justify-content-center" id="myTab" role="tablist">
-      <li class="nav-item " role="presentation">
+      <li class="nav-item" role="presentation">
         <a class="nav-link active text-dark font-weight-bold" id="todasPostagens-tab" data-toggle="tab" href="#todasPostagens" role="tab" aria-controls="todasPostagens" aria-selected="true">Todas as postagens</a>
       </li>
       <li class="nav-item" role="presentation">
         <a (click)="findByIdUsuario()" class="nav-link text-dark font-weight-bold" id="minhasPostagens-tab" data-toggle="tab" href="#minhasPostagens" role="tab" aria-controls="minhasPostagens" aria-selected="false">Minhas Postagens</a>
       </li>
       <li class="nav-item" role="presentation">
-        <a class="nav-link text-dark font-weight-bold" id="postagensTema-tab" data-toggle="tab" href="#postagensTema" role="tab" aria-controls="postagensTema" aria-selected="false">Postagens por tema</a>
+        <a class="nav-link text-dark font-weight-bold" id="postagensTema" data-toggle="tab" href="#postagensTema" role="tab" aria-controls="postagensTema" aria-selected="false">Postagens por tema</a>
       </li>
     </ul>
     <div class="tab-content" id="myTabContent">
@@ -103,7 +100,7 @@
       <!-- * Inicio de postagens -->
       <div class="container-fluid p-2 col-md-9 bg-2 flex-column">
         <div class="tab-content" id="myTabContent">
-<!-- ! Todas postagens -->
+<!-- ! INICIO Todas postagens -->
         <div class="tab-pane fade show active" id="todasPostagens" role="tabpanel" aria-labelledby="todasPostagens-tab">
         <div class="row justify-content-center " *ngFor="let postagem of listaPostagens | orderBy: key : reverse">
           <div class="col-md-4 d-flex">
@@ -122,7 +119,7 @@
           </div>
         </div>
       </div>
-        <!-- ! Todas postagens -->
+        <!-- ! FIM Todas postagens -->
 
         <!-- * Minhas postagens -->
         <div class="tab-pane fade" id="minhasPostagens" role="tabpanel" aria-labelledby="minhasPostagens-tab">
@@ -140,16 +137,16 @@
                   {{postagem.dataP | date: 'dd/MM/yyyy'}} às {{postagem.dataP | date: 'HH:mm'}}
               </small>
               <p>{{usuario.nome}}</p>
-              <button type="button" class="btn btn-success mr-2" [routerLink]="['/postagem-edit', postagem.id]">Editar</button>
-              <button type="button" class="btn btn-danger" [routerLink]="['/postagem-delete', postagem.id]">Apagar</button>
+              <button type="button" class="btn btn-dark mr-2" [routerLink]="['/postagem-edit', postagem.id]">Editar</button>
+              <button type="button" class="btn btn-dark" [routerLink]="['/postagem-delete', postagem.id]">Apagar</button>
             </div>
           </div>
         </div>
         <!-- * Minhas postagens -->
 
         <!-- ? Inicio do Postagens por Tema -->
-      <div class="tab-pane fade" id="postagensTema" role="tabpanel" aria-labelledby="postagensTema-tab">
-        <div class="justify-content-center" *ngFor="let tema of listaCategorias | orderBy: key : reverse">
+      <div class="tab-pane fade" id="postagensTema" role="tabpanel" aria-labelledby="postagensTema-tab" *ngFor="let categoria of listaCategorias">
+        <div class="justify-content-center" *ngFor="let postagens of categoria.postagem | orderBy: key : reverse">
 
           <div class="col-md-4 d-flex">
             <img class="img-fluid img-post margem borda" src="{{postagem.foto}}"  alt="">
@@ -166,13 +163,9 @@
             </div>
         </div>
       </div>
-      <!-- * Fim do Postagens por Tema -->
+      <!-- ? Fim do Postagens por Tema -->
 
         </div>
-        
-
-
-
       </div>
       <!-- * Final de postagnes -->
 
@@ -320,6 +313,6 @@ aria-labelledby="staticBackdropLabel" aria-hidden="true">
           </div>
 
         <div class="modal-footer">
-        <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
-        <button type="button" class="btn btn-success" (click)="publicar()" data-dismiss="modal">Publicar</button>
+        <button type="button" class="btn btn-dark" data-dismiss="modal">Cancelar</button>
+        <button type="button" class="btn btn-dark" (click)="publicar()" data-dismiss="modal">Publicar</button>
         </div>
