@@ -81,7 +81,7 @@
 <div class="row body">
   <div class="container d-flex flex-column" id="postagens">
     <ul class="nav nav-tabs d-flex justify-content-center" id="myTab" role="tablist">
-      <li class="nav-item" role="presentation">
+      <li class="nav-item " role="presentation">
         <a class="nav-link active text-dark font-weight-bold" id="todasPostagens-tab" data-toggle="tab" href="#todasPostagens" role="tab" aria-controls="todasPostagens" aria-selected="true">Todas as postagens</a>
       </li>
       <li class="nav-item" role="presentation">
@@ -107,7 +107,7 @@
         <div class="tab-pane fade show active" id="todasPostagens" role="tabpanel" aria-labelledby="todasPostagens-tab">
         <div class="row justify-content-center " *ngFor="let postagem of listaPostagens | orderBy: key : reverse">
           <div class="col-md-4 d-flex">
-              <img class="img-fluid img-post margem borda" src="{{postagem.foto}}"  alt="duas mulheres em frente do computador">
+              <img class="img-fluid img-post margem borda" src="{{postagem.foto}}"  alt="">
           </div>
 
           <div class="col-md-7 borda my-2 p-3">
@@ -122,7 +122,6 @@
           </div>
         </div>
       </div>
-
         <!-- ! Todas postagens -->
 
         <!-- * Minhas postagens -->
@@ -130,39 +129,41 @@
           <div class="row justify-content-center" *ngFor="let postagem of usuario.postagem | orderBy: key : reverse">
             
             <div class="col-md-4 d-flex">
-              <img class="img-fluid img-post margem" src="{{postagem.foto}}"  alt="duas mulheres em frente do computador">
+              <img class="img-fluid img-post margem borda" src="{{postagem.foto}}"  alt="">
             </div>
             
-            <div class="col-md-8 border border-dark rounded my-2">
+            <div class="col-md-7 borda my-2 p-3">
               <h4>{{postagem.titulo}}</h4>
               <span>{{postagem.categoria.categoria}}</span>
               <p>{{postagem.texto}}</p>
-              <small class="text-muted">
+              <small>
                   {{postagem.dataP | date: 'dd/MM/yyyy'}} às {{postagem.dataP | date: 'HH:mm'}}
-                </small>
+              </small>
               <p>{{usuario.nome}}</p>
-              <a href="" class="text-info mr-3" [routerLink]="['/postagem-edit', postagem.id]">Editar</a>
-              <a href="" class="text-danger" [routerLink]="['/postagem-delete', postagem.id]">Apagar</a>
+              <button type="button" class="btn btn-success mr-2" [routerLink]="['/postagem-edit', postagem.id]">Editar</button>
+              <button type="button" class="btn btn-danger" [routerLink]="['/postagem-delete', postagem.id]">Apagar</button>
             </div>
           </div>
         </div>
         <!-- * Minhas postagens -->
 
-        <!-- * Inicio do Postagens por Tema -->
+        <!-- ? Inicio do Postagens por Tema -->
       <div class="tab-pane fade" id="postagensTema" role="tabpanel" aria-labelledby="postagensTema-tab">
-        <div class="row flex-column" *ngFor="let tema of listaCategorias">
-          <h3>{{categoria.categoria}}</h3>
-          <div class="row">
-            <div class="col-md-4" *ngFor="let postagem of categoria.postagem">
+        <div class="justify-content-center" *ngFor="let tema of listaCategorias | orderBy: key : reverse">
+
+          <div class="col-md-4 d-flex">
+            <img class="img-fluid img-post margem borda" src="{{postagem.foto}}"  alt="">
+          </div>
+
+            <div class="col-md-7 borda my-2 p-3">
               <h4>{{postagem.titulo}}</h4>
               <span>{{postagem.categoria.categoria}}</span>
               <p>{{postagem.texto}}</p>
-              <small class="text-muted">
+              <small>
                   {{postagem.dataP | date: 'dd/MM/yyyy'}} às {{postagem.dataP | date: 'HH:mm'}}
                 </small>
               <p>{{usuario.nome}}</p>
             </div>
-          </div>
         </div>
       </div>
       <!-- * Fim do Postagens por Tema -->
