@@ -11,6 +11,8 @@ import { SobreComponent } from './sobre/sobre.component';
 import { PostagemDeleteComponent } from './delete/postagem-delete/postagem-delete.component';
 import { PostagemEditComponent } from './edit/postagem-edit/postagem-edit.component';
 import { UsuarioEditComponent } from './edit/usuario-edit/usuario-edit.component';
+import { SobreNosComponent } from './sobre-nos/sobre-nos.component';
+
 
 
 
@@ -26,7 +28,8 @@ const routes: Routes = [
   {path: 'categoria-delete/:id', component: CategoriaDeleteComponent},
   {path: 'postagem-edit/:id', component: PostagemEditComponent},
   {path: 'postagem-delete/:id', component: PostagemDeleteComponent},
-  {path: 'usuario-edit/:id', component: UsuarioEditComponent}
+  {path: 'usuario-edit/:id', component: UsuarioEditComponent},
+  {path: 'sobre-nos', component: SobreNosComponent}
 
 ];
 
