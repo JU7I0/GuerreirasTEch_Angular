@@ -1,4 +1,4 @@
-<div class="bg-img ">
+ borda-redonda<div class="bg-img ">
     
     <div class="row">
     
@@ -11,7 +11,7 @@
                 <label for="nome">Nome:</label>
                 <input
                     type="text"
-                    class="form-control"
+                    class="form-control borda-redonda"
                     name="nome"
                     placeholder="Digite seu nome"
                     [(ngModel)]="usuario.nome"
@@ -21,7 +21,7 @@
                 <label for="usuario">Usuário:</label>
                 <input
                     type="text"
-                    class="form-control"
+                    class="form-control borda-redonda"
                     name="usuario"
                     placeholder="Digite seu email"
                     [(ngModel)]="usuario.usuario"
@@ -31,7 +31,7 @@
                 <label for="foto">Link da Foto:</label>
                 <input
                     type="text"
-                    class="form-control"
+                    class="form-control borda-redonda"
                     name="foto"
                     placeholder="Insira o link da sua foto"
                     [(ngModel)]="usuario.foto"
@@ -41,7 +41,7 @@
                 <label for="senha">Senha:</label>
                 <input
                     type="password"
-                    class="form-control"
+                    class="form-control borda-redonda"
                     name="senha"
                     placeholder="Digite sua senha"
                 />
@@ -51,7 +51,7 @@
                 <input
                     (input)="confirmSenha($event)"
                     type="password"
-                    class="form-control"
+                    class="form-control borda-redonda"
                     name="confirmSenha"
                     placeholder="Digite novamente sua senha"
                     [(ngModel)]="usuario.senha"
@@ -59,15 +59,15 @@
                 </div>
                 <div class="form-group">
                 <label for="tipo">Tipo de usuário:</label>
-                <select name="tipo" id="tipo" class="form-control" (change)="tipoUser($event)">
+                <select name="tipo" id="tipo" class="form-control borda-redonda" (change)="tipoUser($event)">
                     <option value="">Selecione um tipo de usuário</option>
                     <option value="normal">Padrão</option>
                     <option value="adm">Administrador</option>
                 </select>
                 </div >
                 <div class="d-flex justify-content-center mb-3">
-                <button type="submit" class="btn btn-dark mr-3" routerLink="/entrar">Cancelar</button>
-                <button type="submit" class="btn btn-dark" (click)="cadastrar()">Cadastrar</button>
+                <button type="submit" class="borda-redonda btn-dark mr-3" routerLink="/entrar">Cancelar</button>
+                <button type="submit" class="borda-redonda btn-dark" (click)="cadastrar()">Cadastrar</button>
                 </div>
             </div>
             </form>
