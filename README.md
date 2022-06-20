@@ -1,7 +1,7 @@
 <h1 align="center"> Guerreiras Tech - Projeto Integrador Generation Brasil T51 </h1>
 
 
-<img src="./src./assets/img/logo.png" width="80%">
+<img src="../src../assets/img/logo.png" width="80%">
 
 
 ## 💻 Sobre
