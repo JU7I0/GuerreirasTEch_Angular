@@ -280,34 +280,34 @@ aria-labelledby="staticBackdropLabel" aria-hidden="true">
 
           <div class="form-group">
               <label for="titulo">Título</label>
-              <input [(ngModel)]="postagem.titulo" type="text" class="form-control" id="texto" placeholder="Insira um título">
+              <input [(ngModel)]="postagem.titulo" type="text" class="form-control borda-redonda" id="texto" placeholder="Insira um título">
           </div>
 
           <div class="form-group">
             <label for="texto">Texto</label>
-            <textarea [(ngModel)]="postagem.texto" class="form-control" name="texto" id="texto" rows="3"></textarea>
+            <textarea [(ngModel)]="postagem.texto" class="form-control borda-redonda" name="texto" id="texto" rows="3"></textarea>
           </div>
 
           <div class="form-group">
               <label for="titulo">Foto</label>
-              <input [(ngModel)]="postagem.foto" type="text" class="form-control" id="texto" placeholder="Insira uma imagem, via link.">
+              <input [(ngModel)]="postagem.foto" type="text" class="form-control borda-redonda" id="texto" placeholder="Insira uma imagem, via link.">
           </div>
 
           <div class="form-group">
               <label for="titulo">Fonte</label>
-              <input [(ngModel)]="postagem.fonte" type="text" class="form-control" id="texto" placeholder="É uma notícia? poderia inserir a fonte?">
+              <input [(ngModel)]="postagem.fonte" type="text" class="form-control borda-redonda" id="texto" placeholder="É uma notícia? poderia inserir a fonte?">
           </div>
 
           <div class="form-group">
             <label for="texto">Escolha um tema ou <a data-dismiss="modal" routerLink="/categorias">cadastre um novo</a>: </label>
-            <select name="tema" id="tema" class="form-control" [(ngModel)]="idCategoria" (change)="findByIdCategoria()">
+            <select name="tema" id="tema" class="form-control borda-redonda" [(ngModel)]="idCategoria" (change)="findByIdCategoria()">
                 <option *ngFor="let item of listaCategorias" value="{{item.id}}">{{item.categoria}}</option>
             </select>
           </div>
 
         <div class="modal-footer">
-        <button type="button" class="btn btn-dark" data-dismiss="modal">Cancelar</button>
-        <button type="button" class="btn btn-dark" (click)="publicar()" data-dismiss="modal">Publicar</button>
+        <button type="button" class="borda-redonda p-2 btn-dark" data-dismiss="modal">Cancelar</button>
+        <button type="button" class="borda-redonda p-2 btn-dark" (click)="publicar()" data-dismiss="modal">Publicar</button>
         </div>
 
 <!--*FIM MODAL NOVA POSTAGEM-->
