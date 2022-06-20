@@ -28,3 +28,10 @@ box-shadow: 5px 5px 16px 6px rgb(0, 0, 0);
 .text{
     color:rgb(0, 0, 0);
 }
+
+.borda-redonda {
+  box-shadow: 0px 1px 3px 0 rgba(130,120,120,0.75) inset;
+  -webkit-box-shadow: 0px 1px 3px 0 rgba(130,120,120,0.75) inset;
+  -moz-box-shadow: 0px 1px 3px 0 rgba(130,120,120,0.75) inset;
+  border-radius: 20px 20px 20px 20px;
+}
