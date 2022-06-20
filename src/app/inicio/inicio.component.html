@@ -108,14 +108,18 @@
           </div>
 
           <div class="col-md-7 borda my-2 p-3">
-            <h4>{{postagem.titulo}}</h4>
-            <span>{{postagem.categoria.categoria}}</span>
-            <p>{{postagem.texto}}</p>
-            <small>
-              {{postagem.dataP | date: 'dd/MM/yyyy'}} às {{postagem.dataP | date: 'HH:mm'}}
-            </small>
-            <p>por: {{postagem.usuario.nome}}</p>
-            <a href="{{postagem.fonte}}" target="_blank">Leia a notícia aqui</a>
+            <h4 class="text-center m-0">{{postagem.titulo}}</h4>
+            <span class="d-flex justify-content-center mb-3">{{postagem.categoria.categoria}}</span>
+            <div class="my-auto">
+              <p>{{postagem.texto}}</p>
+              <p>Por: {{postagem.usuario.nome}}</p>
+              <div class="d-flex justify-content-between align-content-end">
+                <small>
+                  {{postagem.dataP | date: 'dd/MM/yyyy'}} às {{postagem.dataP | date: 'HH:mm'}}
+                </small>
+                <a href="{{postagem.fonte}}" target="_blank">Leia a notícia aqui</a>
+              </div>
+            </div>
           </div>
         </div>
       </div>

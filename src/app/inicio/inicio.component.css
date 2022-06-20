@@ -107,8 +107,9 @@ border-radius: 60px;
 
 .img-post{
 width: 400px;
-height: auto;
+height: max-content;
 border-radius: 10px;
+align-self: center;
 }
 
 .img-insp{
