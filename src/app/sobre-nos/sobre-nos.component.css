@@ -1,0 +1,87 @@
+.body{
+    background-color: #FFF8E9;
+}
+
+.quem-somos h1 {
+    font-size: 90px;
+    font: #000000;
+}
+ 
+.card {
+    box-shadow: 7px 7px 13px 0px #AA5A58;
+    border-radius: 15px;
+    padding: 15px;
+    justify-content: center;
+  }
+ 
+.card-body {
+    background: #FFF8E9;
+}
+ 
+.icon-github{
+    margin: 0 15px;
+    width: 60px;
+    height: auto;
+    color: #AA5A58;
+    justify-content: center;
+    align-items: center;
+    transition: 0.4;
+    font-size: 30px;
+}
+ 
+.icon-linkedin{
+    margin: 0 15px;
+    width: 60px;
+    height: auto;
+    color: #AA5A58;
+    justify-content: center;
+    align-items: center;
+    transition: 0.4;
+    font-size: 30px;
+}
+ 
+.icon-envelope{
+    margin: 0 15px;
+    width: 60px;
+    height: auto;
+    color: #AA5A58;
+    justify-content: center;
+    align-items: center;
+    transition: 0.4;
+    font-size: 30px;
+}
+        
+.fa-github {
+    color: #AA5A58;
+}
+ 
+.fa-linkedin {
+    color: #AA5A58;
+}
+    
+.fa-envelope {
+    color: #AA5A58;
+} 
+
+.cards:hover {
+    color: #000000;
+    transform: scale(1.1);
+    transition: 0.3s;
+}
+
+.logo{
+width: auto;
+height:500px;
+}
+
+.card-img-top{
+    border-radius: 100px;
+}
+
+.margem{
+    padding-top: 70px;
+}
+
+.font-size{
+font-size: 15pt;
+}
