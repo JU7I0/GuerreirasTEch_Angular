@@ -5,7 +5,7 @@
 
 <!--Carousel-->
 
-  <div id="carouselExampleFade" class="carousel slide carousel-fade body" data-ride="carousel">
+  <div id="carouselExampleFade" class="carousel slide carousel-fade body container-fluid" data-ride="carousel">
     <ol class="carousel-indicators">
       <li class="bg-dark" data-target="#carouselExampleFade" data-slide-to="0"></li>
       <li class="bg-dark" data-target="#carouselExampleFade" data-slide-to="1"></li>
@@ -75,33 +75,47 @@
 <!--/Carousel-->
 
 <!--TESTE-->
-<div class="row body">
-  <div class="container d-flex flex-column" id="postagens">
-    <ul class="nav nav-tabs d-flex justify-content-center" id="myTab" role="tablist">
-      <li class="nav-item" role="presentation">
-        <a class="nav-link active text-dark font-weight-bold" id="todasPostagens-tab" data-toggle="tab" href="#todasPostagens" role="tab" aria-controls="todasPostagens" aria-selected="true">Todas as postagens</a>
-      </li>
-      <li class="nav-item" role="presentation">
-        <a (click)="findByIdUsuario()" class="nav-link text-dark font-weight-bold" id="minhasPostagens-tab" data-toggle="tab" href="#minhasPostagens" role="tab" aria-controls="minhasPostagens" aria-selected="false" *ngIf="auth.logado()">Minhas Postagens</a>
-      </li>
-      <li class="nav-item" role="presentation">
-        <a class="nav-link text-dark font-weight-bold" id="postagensTema" data-toggle="tab" href="#postagensTema" role="tab" aria-controls="postagensTema" aria-selected="false">Postagens por tema</a>
-      </li>
-    </ul>
-    <div class="tab-content" id="myTabContent">
 
-      
-    </div>
-  </div>
-</div>
 <!--/TESTE-->
 
-  <div class="container-fluid d-flex body">
+  <div class="container-fluid col-md-12 py-5 m-0 d-flex body">
+
       <!-- * Inicio de postagens -->
-      <div class="container-fluid p-2 col-md-9 bg-2 flex-column">
+      <div class="container-fluid estilo-nav p-2 col-md-9 bg-2 flex-column">
         <div class="tab-content" id="myTabContent">
+
+
+          <div class="row">
+          <div class="container d-flex flex-column" id="postagens">
+            <ul class="nav nav-tabs d-flex justify-content-center" id="myTab" role="tablist">
+              <li class="nav-item" role="presentation">
+                <a class="nav-link active text-dark font-weight-bold" id="todasPostagens-tab" data-toggle="tab" href="#todasPostagens" role="tab" aria-controls="todasPostagens" aria-selected="true">Todas as postagens</a>
+              </li>
+              <li class="nav-item" role="presentation">
+                <a (click)="findByIdUsuario()" class="nav-link text-dark font-weight-bold" id="minhasPostagens-tab" data-toggle="tab" href="#minhasPostagens" role="tab" aria-controls="minhasPostagens" aria-selected="false" *ngIf="auth.logado()">Minhas Postagens</a>
+              </li>
+              <!-- <li class="nav-item" role="presentation">
+                <a class="nav-link text-dark font-weight-bold" id="postagensTema" data-toggle="tab" href="#postagensTema" role="tab" aria-controls="postagensTema" aria-selected="false">Postagens por tema</a>
+              </li> -->
+            </ul>
+            <div class="tab-content" id="myTabContent"></div>
+          </div>
+        </div>
+
 <!-- ! INICIO Todas postagens -->
         <div class="tab-pane fade show active" id="todasPostagens" role="tabpanel" aria-labelledby="todasPostagens-tab">
+
+        
+
+        <div class="row d-flex justify-content-center mt-5 mb-5">
+            <div class="form-group">
+              <input type="text" class="form-control text-center body largura borda-redonda" id="titulo" placeholder="Digite um titulo de postagem para pesquisar" [(ngModel)]='tituloPost' (keyup)='findByTituloPostagem()'>
+            </div>
+        </div>
+
+
+        
+        
         <div class="row justify-content-center " *ngFor="let postagem of listaPostagens | orderBy: key : reverse">
           <div class="col-md-4 d-flex">
               <img class="img-fluid img-post margem borda" src="{{postagem.foto}}"  alt="">
@@ -149,16 +163,23 @@
         <!-- * Minhas postagens -->
 
         <!-- ? Inicio do Postagens por Tema -->
-      <div class="tab-pane fade" id="postagensTema" role="tabpanel" aria-labelledby="postagensTema-tab" >
-        <div class="justify-content-center" *ngFor="let postagens of categoria.postagem | orderBy: key : reverse">
+      <!-- <div *ngFor="let categoria of listaCategorias" class="tab-pane fade" id="postagensTema" role="tabpanel" aria-labelledby="postagensTema-tab" >
+        <div *ngFor="let postagens of categoria.postagem | orderBy: key : reverse" class="justify-content-center">
+
+          <div class="row d-flex justify-content-center mt-5 mb-5">
+            <div class="form-group">
+              <input type="text" class="form-control text-center largura borda-redonda" id="nome" placeholder="Digite um titulo de categoria para pesquisar" [(ngModel)]='nomeCategoria' (keyup)='findByNomeCategoria()'>
+            </div>
+        </div>
+
+
+
 
           <div class="col-md-4 d-flex">
             <img class="img-fluid img-post margem borda" src="{{postagem.foto}}"  alt="">
           </div>
-
             <div class="col-md-7 borda my-2 p-3">
               <h4>{{postagem.titulo}}</h4>
-              <span>{{postagem.categoria.categoria}}</span>
               <p>{{postagem.texto}}</p>
               <small>
                   {{postagem.dataP | date: 'dd/MM/yyyy'}} às {{postagem.dataP | date: 'HH:mm'}}
@@ -166,7 +187,8 @@
               <p>{{usuario.nome}}</p>
             </div>
         </div>
-      </div>
+      </div> -->
+
       <!-- ? Fim do Postagens por Tema -->
 
         </div>
@@ -175,7 +197,7 @@
 
 
       <!--Início da barra contribuidores -->
-      <div class="col-md-2 bg-2 mb-3">
+      <div class="col-md-2 estilo-nav bg-2 mb-3">
         <div class="text-center border-bottom">
         <img class="img-colab" src="https://i.imgur.com/MzyhSH5.jpg?2"  alt="">
         <p class="m-0 ">Bruna Martins</p>
@@ -225,7 +247,10 @@
 
       </div>
       <!-- Final da barra de contribuidores -->
-    </div>
+  
+
+
+
 
 <!--* MODAL NOVA POSTAGEM-->
 <div class="modal fade nav-2" id="novaPostagem" tabindex="-1" role="dialog" 
