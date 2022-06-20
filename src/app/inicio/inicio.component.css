@@ -153,10 +153,9 @@ margin-bottom: 2px;
 .parallax {
   /* The image used */
     background-image: url(../../assets/img/fundo-menu.png);
-
+    margin-top: 10px;
   /* Full height */
-    height: 56vh;
-
+    height: 50vh;
   /* Create the parallax scrolling effect */
     background-attachment: fixed;
     background-position: center;
