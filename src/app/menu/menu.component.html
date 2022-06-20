@@ -21,7 +21,7 @@
             </li>
             <li><a class="linkmenu" href="#">INÍCIO</a></li>
             <li><a class="linkmenu" *ngIf="auth.logado()" href="#" data-toggle="modal" data-target="#novaPostagem">NOVA POSTAGEM</a></li>
-            <li><a class="linkmenu" href="#" data-toggle="modal" data-target="#sobreNos">SOBRE NÓS</a></li>
+            <li><a class="linkmenu" routerLink="/sobre-nos">SOBRE NÓS</a></li>
         </ul>
     </nav>
 
@@ -43,24 +43,3 @@
         </div>
     </div>
 </header>
-
-<!--! INÍCIO MODAL SOBRE NÓS-->
-<div class="modal fade nav-2" id="sobreNos" tabindex="-1" role="dialog" 
-aria-labelledby="staticBackdropLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content">
-        <div class="modal-header body">
-        <h5 class="modal-title" id="staticBackdropLabel">Sobre Nós</h5>
-        </div>
-
-        <div class="modal-body body">
-        <p>
-            API desenvolvida como projeto final para conclusão do bootcamp da Generation Brasil. 
-O Guerreiras Tech é uma iniciativa inspirada nos Objetivos de Desenvolvimento Sustentável (ODS) número 10 da ONU, que tem por objetivo empoderar e promover a inclusão social diminuindo a desigualdade.
-<br>O que é a Guerreiras Tech ou GTech? Nós somos uma equipe que busca inovar no mercado atuando como feed de notícias totalmente ocupado por mulheres. Inspirado na garra na força de mulheres pernambucanas, carregamos a missão de incentivar e aproximar mulheres na tecnologia assim criamos uma rede de apoio mútua, onde mulheres encontraremos apoio, informação e muita troca de aprendizado com outras mulheres.
-<br>Temos o objetivo de promover acolhimento às mulheres que desejam iniciar carreira na área de tecnologia.
-        </p>
-        <div class="modal-footer">
-        <button type="button" class="btn btn-dark" data-dismiss="modal">Cancelar</button>
-        </div>
-<!-- ! FIM MODAL SOBRE NÓS-->
