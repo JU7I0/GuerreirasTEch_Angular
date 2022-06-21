@@ -28,6 +28,7 @@ export class InicioComponent implements OnInit {
 
   usuario: Usuario = new Usuario()
   idUsuario = environment.id
+  listaUsuarios: string
 
   key = 'data'
   reverse = true
@@ -51,6 +52,8 @@ export class InicioComponent implements OnInit {
 
     
   }
+
+ 
 
   getAllCategorias(){
     this.categoriaService.getAllCategoria().subscribe((resp: Categoria[]) => {
@@ -104,7 +107,7 @@ export class InicioComponent implements OnInit {
     }
   }  
 
-   findByTituloPostagem(){
+  findByTituloPostagem(){
     if(this.tituloPost == ''){
       this.getAllPostagens()
     } else {
@@ -114,7 +117,13 @@ export class InicioComponent implements OnInit {
     }
   }
 
+
+
 }
+
+
+
+
 
 
 
