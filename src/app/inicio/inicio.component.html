@@ -162,34 +162,6 @@
         </div>
         <!-- * Minhas postagens -->
 
-        <!-- ? Inicio do Postagens por Tema -->
-      <!-- <div *ngFor="let categoria of listaCategorias" class="tab-pane fade" id="postagensTema" role="tabpanel" aria-labelledby="postagensTema-tab" >
-        <div *ngFor="let postagens of categoria.postagem | orderBy: key : reverse" class="justify-content-center">
-
-          <div class="row d-flex justify-content-center mt-5 mb-5">
-            <div class="form-group">
-              <input type="text" class="form-control text-center largura borda-redonda" id="nome" placeholder="Digite um titulo de categoria para pesquisar" [(ngModel)]='nomeCategoria' (keyup)='findByNomeCategoria()'>
-            </div>
-        </div>
-
-
-
-
-          <div class="col-md-4 d-flex">
-            <img class="img-fluid img-post margem borda" src="{{postagem.foto}}"  alt="">
-          </div>
-            <div class="col-md-7 borda my-2 p-3">
-              <h4>{{postagem.titulo}}</h4>
-              <p>{{postagem.texto}}</p>
-              <small>
-                  {{postagem.dataP | date: 'dd/MM/yyyy'}} às {{postagem.dataP | date: 'HH:mm'}}
-                </small>
-              <p>{{usuario.nome}}</p>
-            </div>
-        </div>
-      </div> -->
-
-      <!-- ? Fim do Postagens por Tema -->
 
         </div>
       </div>
@@ -289,7 +261,7 @@ aria-labelledby="staticBackdropLabel" aria-hidden="true">
           </div>
 
           <div class="form-group">
-            <label for="texto">Escolha um tema ou <a data-dismiss="modal" routerLink="/categorias">cadastre um novo</a>: </label>
+            <label for="texto">Escolha um tema<!-- ou <a data-dismiss="modal" routerLink="/categorias">cadastre um novo</a> -->: </label>
             <select name="tema" id="tema" class="form-control borda-redonda" [(ngModel)]="idCategoria" (change)="findByIdCategoria()">
                 <option *ngFor="let item of listaCategorias" value="{{item.id}}">{{item.categoria}}</option>
             </select>
