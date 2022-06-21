@@ -35,8 +35,8 @@ export class CadastrarComponent implements OnInit {
   }
 
   cadastrar() {
-    this.usuario.tipo = this.tipoUsuario
-    // this.usuario.tipo = 'padrao'
+    /* this.usuario.tipo = this.tipoUsuario */
+    this.usuario.tipo = 'padrao'
 
     if(this.usuario.senha != this.confirmarSenha){
       alert("Atenção! As senhas não coincidem.")
